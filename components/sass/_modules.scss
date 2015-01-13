@@ -22,6 +22,7 @@ header#intro {
         color: rgba(255,255,255,.85);
         text-decoration: none;
         display: inline;
+        font-weight: 100px;
         &:hover {
           color: $dark;
           padding: 10px;
@@ -37,13 +38,14 @@ header#intro {
         display: block;
         color: rgba(255,255,255,.75);
         font-size: 1.75em;
-        line-height: 1.5em;
+        font-weight: $thin;
+        line-height: 2em;
       }//p
       h3 {
         text-transform: uppercase;
         color: $light;
         font-weight: $thin;
-        font: 2.25em "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 2.25em;
       }
     }//subnav
   }//fullheight
@@ -74,7 +76,7 @@ div.page_2 {
 
 //////3rd page/////////
 article.halfheight {
-  
+
   div.page_3 {
     background: #FAFBFB;
 
