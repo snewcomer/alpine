@@ -1,0 +1,82 @@
+//////nav///////
+header#intro {
+  article.fullheight {
+    @include backImage('../images/cheeseboard.jpg');
+    .navBar {
+      padding: 1rem 0;
+      a {
+        padding: .75rem;
+      }
+      div.left {
+        float: left;
+        padding-left: 4rem;
+        a {
+          font-size: 1.75em;
+        }
+      }//div.left
+      div.right {
+        float: right;
+        padding-right: 4rem;
+      }
+      a {
+        color: rgba(255,255,255,.85);
+        text-decoration: none;
+        display: inline;
+        &:hover {
+          color: $dark;
+          padding: 10px;
+          background: rgba(255,255,255,.5);
+        }
+      }//a
+    }//navBar
+    .subnav {
+      padding-top: 150px;
+      margin: 0 auto;
+      text-align: center;
+      p {
+        display: block;
+        color: rgba(255,255,255,.75);
+        font-size: 1.75em;
+        line-height: 1.5em;
+      }//p
+      h3 {
+        text-transform: uppercase;
+        color: $light;
+        font-weight: $thin;
+        font: 2.25em "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      }
+    }//subnav
+  }//fullheight
+}//intro
+
+
+//////below header//////
+div.page {
+  height: 300px;
+  background: #3D4849;
+  padding: 2rem 0;
+  main.cf {
+    text-align: center;
+    h2 {
+      font-size: 2em;
+    }
+    p {
+
+    }
+  }//main.cf
+}//div.page
+
+
+//////2nd page/////////
+div.page_2 {
+  height: 500px;
+}
+
+//////3rd page/////////
+article.halfheight {
+  
+  div.page_3 {
+    background: #FAFBFB;
+
+  }
+}

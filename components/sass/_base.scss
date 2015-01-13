@@ -1,0 +1,12 @@
+// _base.scss
+// ==============
+body {
+  background: #F5F5F1;
+  font-family: $bodyFont;
+  font-size: 1.1em;
+}
+
+h2, h1, p, a {
+  font-family: Helvetica,"HelveticaNeue","Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+  font-weight: $thin;
+}

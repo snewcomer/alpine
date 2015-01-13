@@ -1,0 +1,70 @@
+// _variables.scss
+// =================
+@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+/* \$susy: (
+columns: 12,
+container: 60em,
+gutters: 1/4,
+gutter-position: inside
+); */
+
+$narrow: 400px;
+$small: 650px;
+$medium: 960px;
+$wide: 1200px;
+
+
+//Add Color Palette
+$blue       : #063642;
+$green      : #45B29D;
+$yellow     : #EFC94C;
+$orange     : #E27A3F;
+$lorange    : #FF885C;
+$red        : #DF4848;
+$pink       : #CD0069;
+$purple     : #6C71C4;
+$dark       : #000000;
+$light      : #FFFFFF;
+$lgreen     : #0DFFAA;
+$dblue      : rgba(82,82,158,.7);
+$dred       : rgba(255,20,17,.5);
+$beige         : #E3C691;
+$darkGreenGold : #8D8862;
+$lightGreen    : #C0DC99;
+$green         : #507356;
+$lightBlue     : #97D5D9;
+$desatBlue     : #464B65;
+$purple        : #3E2B3D;
+$darkPurple    : #3A3248;
+$pink          : #CC8E94;
+$skin          : #B08B7B;
+
+$headFont : 'Patua One', sans-serif;
+$bodyFont : 'Inika', serif;
+
+$backgroundColor    : $light;
+$typeDefault        : $dark;
+$navBackground      : $blue;
+$navForeground      : $light;
+$navHover           : $yellow;
+$navBrandBg         : $red;
+$headersubbg        : $dark;
+
+//Font variables
+$fontfamily       : 'Exo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+
+$thin     : 200;
+$phone    : 325px;
+$normal   : 400;
+$bold     : 600;
+$heavy    : 800;
+
+$headFont   : $thin 1.5em/1.5em $fontfamily;
+$mainFont   : $thin 1em/1.5em $fontfamily;
+$headColor  : lighten($blue, 20);
