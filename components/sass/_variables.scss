@@ -6,12 +6,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
-/* \$susy: (
-columns: 12,
-container: 60em,
-gutters: 1/4,
-gutter-position: inside
-); */
+$susy: (
+  columns: 12,
+  container: 60em,
+  gutters: 1/4,
+  gutter-position: inside
+);
 
 $narrow: 400px;
 $small: 650px;

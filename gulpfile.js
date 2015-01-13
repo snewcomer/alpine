@@ -32,27 +32,23 @@ if (env==='development') {
 }
 
 
-coffeeSources = ['components/coffee/tagline.coffee'];
-  jsSources = [
-  'components/scripts/rclick.js',
-  'components/scripts/pixgrid.js',
-  'components/scripts/tagline.js',
-  'components/scripts/template.js'
-  ];
+coffeeSources = ['components/coffee/index.coffee'];
+jsSources = ['components/js/index.js'];
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
 jsonSources = [outputDir + 'js/*.json'];
+
 
 gulp.task('coffee', function() {
   gulp.src(coffeeSources)
   .pipe(coffee({ bare: true })
   .on('error', gutil.log))
-  .pipe(gulp.dest('components/scripts'))
+  .pipe(gulp.dest('components/js'))
 });
 
 gulp.task('js', function() {
   gulp.src(jsSources)
-  .pipe(concat('script.js'))
+  .pipe(concat('index.js'))
   .pipe(browserify())
   .pipe(gulpif(env === 'production', uglify()))
   .pipe(gulp.dest(outputDir + 'js'))
@@ -64,7 +60,8 @@ gulp.task('compass', function() {
   .pipe(compass({
     sass: 'components/sass',
     image: outputDir + 'images',
-    style: sassStyle
+    style: sassStyle,
+    require: 'breakpoint'
   })
   .on('error', gutil.log))
   .pipe(gulp.dest(outputDir + 'css'))

@@ -59,12 +59,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* \$susy: (
-columns: 12,
-container: 60em,
-gutters: 1/4,
-gutter-position: inside
-); */
 body {
   background: #F5F5F1;
   font-family: "Inika", serif;
@@ -96,33 +90,48 @@ header#intro article.fullheight {
     height: 100px;
   }
 }
-header#intro article.fullheight .navBar {
-  padding: 1rem 0;
+header#intro article.fullheight #navBar {
+  width: 100%;
+  position: fixed;
 }
-header#intro article.fullheight .navBar a {
+header#intro article.fullheight #navBar a {
   padding: .75rem;
 }
-header#intro article.fullheight .navBar div.left {
+header#intro article.fullheight #navBar div.left {
   float: left;
   padding-left: 4rem;
+  margin-right: 25rem;
 }
-header#intro article.fullheight .navBar div.left a {
+header#intro article.fullheight #navBar div.left a {
   font-size: 1.75em;
 }
-header#intro article.fullheight .navBar div.right {
+header#intro article.fullheight #navBar div.right {
   float: right;
-  padding-right: 4rem;
 }
-header#intro article.fullheight .navBar a {
+header#intro article.fullheight #navBar a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   display: inline;
   font-weight: 100px;
 }
-header#intro article.fullheight .navBar a:hover {
+header#intro article.fullheight #navBar a:hover:not(#brand) {
+  padding: 1rem 10px;
+  text-decoration: none;
+  border-bottom: 2px solid #ec6713;
+}
+header#intro article.fullheight .none {
+  padding: 2.5rem 0;
+}
+header#intro article.fullheight .background {
+  background: #F7F6F6;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  padding: 1rem 0;
+}
+header#intro article.fullheight .background span, header#intro article.fullheight .background a#brand {
   color: #000000;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.5);
 }
 header#intro article.fullheight .subnav {
   padding-top: 150px;

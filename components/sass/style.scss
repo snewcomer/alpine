@@ -4,7 +4,12 @@
 //Compass imports
 @import "compass";
 @import "compass/reset";
+@import "compass/css3/flexbox";
 @import "compass/css3/box-shadow";
+
+//External Libraries
+@import "susy";
+@import "breakpoint";
 
 //Core partials
 @import "variables";

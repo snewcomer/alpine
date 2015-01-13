@@ -2,34 +2,46 @@
 header#intro {
   article.fullheight {
     @include backImage('../images/cheeseboard.jpg');
-    .navBar {
-      padding: 1rem 0;
+    #navBar {
+      width: 100%;
+      position: fixed;
       a {
         padding: .75rem;
       }
       div.left {
         float: left;
         padding-left: 4rem;
+        margin-right: 25rem;
         a {
           font-size: 1.75em;
         }
       }//div.left
       div.right {
         float: right;
-        padding-right: 4rem;
       }
       a {
         color: rgba(255,255,255,.85);
         text-decoration: none;
         display: inline;
         font-weight: 100px;
-        &:hover {
-          color: $dark;
-          padding: 10px;
-          background: rgba(255,255,255,.5);
+        &:hover:not(#brand) {
+          padding: 1rem 10px;
+          text-decoration: none;
+          border-bottom: 2px solid #ec6713;
         }
       }//a
     }//navBar
+    .none {
+      padding: 2.5rem 0;
+    }
+    .background {
+      background: #F7F6F6;
+      @include single-transition(all, 1s, ease-out);
+      padding: 1rem 0;
+      span, a#brand {
+        color: $dark;
+      }
+    }//background class added via jquery
     .subnav {
       padding-top: 150px;
       margin: 0 auto;
