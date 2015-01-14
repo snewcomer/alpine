@@ -86,7 +86,7 @@ header#intro #navBar div.left a {
 }
 @media (max-width: 650px) {
   header#intro #navBar div.left {
-    padding-left: 10px;
+    padding-left: 20px;
   }
 }
 header#intro #navBar div.right {
@@ -111,6 +111,15 @@ header#intro #navBar a:hover:not(#brand) {
 @media (max-width: 960px) {
   header#intro #navBar a {
     display: inline-block;
+  }
+}
+@media (max-width: 360px) {
+  header#intro #navBar a {
+    font-size: .75em;
+    padding: .4rem 2px;
+    margin-left: 1.5em;
+    padding-top: .3em;
+    margin-top: none;
   }
 }
 header#intro #navBar a.importantRule {
@@ -139,11 +148,7 @@ header#intro .background {
 header#intro .background span, header#intro .background a#brand {
   color: #000000;
 }
-<<<<<<< HEAD
-header#intro .background article.fullheight {
-=======
 header#intro article.fullheight {
->>>>>>> master
   background: url("../images/cheeseboard.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -161,28 +166,16 @@ header#intro article.fullheight {
   justify-content: center;
 }
 @media (max-width: 800px) {
-<<<<<<< HEAD
-  header#intro .background article.fullheight {
-=======
   header#intro article.fullheight {
->>>>>>> master
     height: 150px;
   }
 }
 @media (max-width: 300px) {
-<<<<<<< HEAD
-  header#intro .background article.fullheight {
-    height: 100px;
-  }
-}
-header#intro .background .subnav {
-=======
   header#intro article.fullheight {
     height: 100px;
   }
 }
 header#intro article.fullheight .subnav {
->>>>>>> master
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -194,14 +187,14 @@ header#intro article.fullheight .subnav {
   text-align: center;
   margin: 0 auto;
 }
-header#intro .background .subnav p {
+header#intro article.fullheight .subnav p {
   display: block;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.75em;
   font-weight: 100;
   line-height: 2em;
 }
-header#intro .background .subnav h3 {
+header#intro article.fullheight .subnav h3 {
   text-transform: uppercase;
   color: #FFFFFF;
   font-weight: 100;
@@ -211,6 +204,7 @@ header#intro .background .subnav h3 {
 div.page {
   height: 450px;
   background: #3D4849;
+  color: white;
   padding: 2rem 0;
 }
 div.page main.cf {
@@ -235,6 +229,33 @@ article.halfheight {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-article.halfheight div.page_3 {
-  background: #FAFBFB;
+
+div.page_3 {
+  background: #063642;
+  height: 300px;
+  color: white;
+  padding: 2rem 0;
+}
+div.page_3 main.cf {
+  text-align: center;
+}
+div.page_3 main.cf h2 {
+  font-size: 2em;
+}
+
+footer {
+  padding: 14px 0;
+}
+footer #socialmedia {
+  text-align: center;
+}
+footer #socialmedia ul {
+  list-style: none;
+}
+footer #socialmedia ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+footer #socialmedia ul li img {
+  width: 60px;
 }
