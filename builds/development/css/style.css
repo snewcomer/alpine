@@ -69,7 +69,81 @@ h2, h1, p, a {
   font-family: 'Raleway', Helvetica,"HelveticaNeue","Helvetica Neue",Arial,"Lucida Grande",sans-serif;
 }
 
+header#intro #navBar {
+  width: 100%;
+  position: fixed;
+}
+header#intro #navBar a {
+  padding: .75rem;
+}
+header#intro #navBar div.left {
+  float: left;
+  padding-left: 4rem;
+  display: inline;
+}
+header#intro #navBar div.left a {
+  font-size: 1.75em;
+}
+@media (max-width: 650px) {
+  header#intro #navBar div.left {
+    padding-left: 10px;
+  }
+}
+header#intro #navBar div.right {
+  float: right;
+  margin-right: 1rem;
+  display: inline;
+}
+header#intro #navBar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: block;
+  border-bottom: 0px solid transparent;
+  transition: .5s ease;
+  font-weight: 100px;
+  white-space: nowrap;
+  padding: 1rem 10px;
+}
+header#intro #navBar a:hover:not(#brand) {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
+}
+@media (max-width: 960px) {
+  header#intro #navBar a {
+    display: inline-block;
+  }
+}
+header#intro #navBar a.importantRule {
+  display: inline-block;
+}
+header#intro .none {
+  padding: 2.5rem 0;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+@media (max-width: 650px) {
+  header#intro .none {
+    padding: 1rem 0;
+  }
+}
+header#intro .background {
+  background: #F7F6F6;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  padding: 1rem 0;
+}
+header#intro .background span, header#intro .background a#brand {
+  color: #000000;
+}
+<<<<<<< HEAD
+header#intro .background article.fullheight {
+=======
 header#intro article.fullheight {
+>>>>>>> master
   background: url("../images/cheeseboard.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -87,86 +161,28 @@ header#intro article.fullheight {
   justify-content: center;
 }
 @media (max-width: 800px) {
+<<<<<<< HEAD
+  header#intro .background article.fullheight {
+=======
   header#intro article.fullheight {
+>>>>>>> master
     height: 150px;
   }
 }
 @media (max-width: 300px) {
+<<<<<<< HEAD
+  header#intro .background article.fullheight {
+    height: 100px;
+  }
+}
+header#intro .background .subnav {
+=======
   header#intro article.fullheight {
     height: 100px;
   }
 }
-header#intro article.fullheight #navBar {
-  width: 100%;
-  position: fixed;
-}
-header#intro article.fullheight #navBar a {
-  padding: .75rem;
-}
-header#intro article.fullheight #navBar div.left {
-  float: left;
-  padding-left: 4rem;
-  display: inline;
-}
-header#intro article.fullheight #navBar div.left a {
-  font-size: 1.75em;
-}
-@media (max-width: 650px) {
-  header#intro article.fullheight #navBar div.left {
-    padding-left: 10px;
-  }
-}
-header#intro article.fullheight #navBar div.right {
-  float: right;
-  margin-right: 1rem;
-  display: inline;
-}
-header#intro article.fullheight #navBar a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  display: block;
-  border-bottom: 0px solid transparent;
-  transition: .5s ease;
-  font-weight: 100px;
-  white-space: nowrap;
-  padding: 1rem 10px;
-}
-header#intro article.fullheight #navBar a:hover:not(#brand) {
-  color: rgba(225, 225, 225, 0.85);
-  border-bottom: 2px solid #ec6713;
-}
-@media (max-width: 960px) {
-  header#intro article.fullheight #navBar a {
-    display: inline-block;
-  }
-}
-header#intro article.fullheight #navBar a.importantRule {
-  display: inline-block;
-}
-header#intro article.fullheight .none {
-  padding: 2.5rem 0;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-@media (max-width: 650px) {
-  header#intro article.fullheight .none {
-    padding: 1rem 0;
-  }
-}
-header#intro article.fullheight .background {
-  background: #F7F6F6;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  padding: 1rem 0;
-}
-header#intro article.fullheight .background span, header#intro article.fullheight .background a#brand {
-  color: #000000;
-}
 header#intro article.fullheight .subnav {
+>>>>>>> master
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -178,14 +194,14 @@ header#intro article.fullheight .subnav {
   text-align: center;
   margin: 0 auto;
 }
-header#intro article.fullheight .subnav p {
+header#intro .background .subnav p {
   display: block;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.75em;
   font-weight: 100;
   line-height: 2em;
 }
-header#intro article.fullheight .subnav h3 {
+header#intro .background .subnav h3 {
   text-transform: uppercase;
   color: #FFFFFF;
   font-weight: 100;
