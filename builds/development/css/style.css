@@ -168,6 +168,17 @@ div.page_2 {
   height: 500px;
 }
 
+article.halfheight {
+  background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
 article.halfheight div.page_3 {
   background: #FAFBFB;
 }
