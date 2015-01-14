@@ -10,9 +10,23 @@
 <body>
 
   <header id="intro">
-    <nav ng-include="'nav.html'" id="navBar" class="none"></nav>
+    <!-- <nav ng-include="'nav.html'" id="navBar" class="none"></nav> -->
+  <nav id="navBar" class="none">
+    <div class="left">
+      <a href="#welcome" id="brand">Alpine Cheese</a>
+    </div>
+
+    <div class="right">
+      <a href="#aboutUs"><span>ABOUT</span></a>
+      <a href="#welcome"><span>WHERE TO BUY</span></a>
+      <a href="#ourCheese"><span>OUR CHEESE</span></a>
+      <a href="#contactUs"><span>CONTACT US</span></a>
+      <a href="#contactUs"><span>BLOG</span></a>
+    </div>
+  </nav>
+
     <article class="fullheight">
-      <div class="subnav">
+      <div class="subnav" id="welcome">
         <p>We are on a mission</p><br />
         <h3>to make the best cheese around</h3>
       </div>

@@ -1,0 +1,269 @@
+@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  background: #F5F5F1;
+  font-family: "Inika", serif;
+  font-size: 1.1em;
+}
+
+h2, h1, p, a {
+  font-family: 'Raleway', Helvetica,"HelveticaNeue","Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+}
+
+header#intro #navBar {
+  width: 100%;
+  position: fixed;
+}
+header#intro #navBar div.left {
+  float: left;
+  padding-left: 4rem;
+  display: inline;
+}
+header#intro #navBar div.left a {
+  font-size: 1.75em;
+}
+@media (max-width: 650px) {
+  header#intro #navBar div.left {
+    padding-left: 20px;
+  }
+}
+header#intro #navBar div.right {
+  float: right;
+  margin-right: 1rem;
+  display: inline;
+}
+header#intro #navBar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: block;
+  border-bottom: 0px solid transparent;
+  transition: .5s ease;
+  font-weight: 100px;
+  white-space: nowrap;
+  padding: 1rem 10px;
+}
+header#intro #navBar a:hover:not(#brand) {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
+}
+@media (max-width: 960px) {
+  header#intro #navBar a {
+    display: inline-block;
+  }
+}
+@media (max-width: 650px) {
+  header#intro #navBar a {
+    font-size: 1em;
+    padding: .4rem 2px;
+    margin-left: 1.5em;
+  }
+}
+header#intro #navBar a.active {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
+}
+header#intro #navBar a.importantRule {
+  display: inline-block;
+}
+header#intro .none {
+  padding: 2.5rem 0;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+@media (max-width: 650px) {
+  header#intro .none {
+    padding: 1rem 0;
+    background: #F7F6F6;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    padding: 1rem 0;
+  }
+  header#intro .none span, header#intro .none a#brand {
+    color: #000000;
+  }
+}
+header#intro .background {
+  background: #F7F6F6;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  padding: 1rem 0;
+}
+header#intro .background span, header#intro .background a#brand {
+  color: #000000;
+}
+header#intro article.fullheight {
+  background: url("../images/cheeseboard.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  header#intro article.fullheight {
+    height: 150px;
+  }
+}
+@media (max-width: 300px) {
+  header#intro article.fullheight {
+    height: 100px;
+  }
+}
+header#intro article.fullheight .subnav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: block;
+  /* -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards; */
+  text-align: center;
+  margin: 0 auto;
+}
+header#intro article.fullheight .subnav p {
+  display: block;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.75em;
+  font-weight: 100;
+  line-height: 2em;
+}
+header#intro article.fullheight .subnav h3 {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 2.25em;
+}
+
+div.page {
+  height: 600px;
+  background: #3D4849;
+  color: white;
+  padding: 2rem 0;
+}
+div.page main.cf {
+  text-align: center;
+}
+div.page main.cf h2 {
+  font-size: 2em;
+}
+
+div.page_2 {
+  height: 500px;
+}
+
+article.halfheight {
+  background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+div.page_3 {
+  background: #063642;
+  height: 300px;
+  color: white;
+  padding: 2rem 0;
+}
+div.page_3 main.cf {
+  text-align: center;
+}
+div.page_3 main.cf h2 {
+  font-size: 2em;
+}
+
+footer {
+  padding: 14px 0;
+}
+footer #socialmedia {
+  text-align: center;
+}
+footer #socialmedia ul {
+  list-style: none;
+}
+footer #socialmedia ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+footer #socialmedia ul li img {
+  width: 60px;
+}
