@@ -79,6 +79,12 @@ header#intro article.fullheight {
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 @media (max-width: 800px) {
   header#intro article.fullheight {
@@ -100,43 +106,77 @@ header#intro article.fullheight #navBar a {
 header#intro article.fullheight #navBar div.left {
   float: left;
   padding-left: 4rem;
-  margin-right: 25rem;
+  display: inline;
 }
 header#intro article.fullheight #navBar div.left a {
   font-size: 1.75em;
 }
+@media (max-width: 650px) {
+  header#intro article.fullheight #navBar div.left {
+    padding-left: 10px;
+  }
+}
 header#intro article.fullheight #navBar div.right {
   float: right;
+  margin-right: 1rem;
+  display: inline;
 }
 header#intro article.fullheight #navBar a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  display: inline;
+  display: block;
+  border-bottom: 0px solid transparent;
+  transition: .5s ease;
   font-weight: 100px;
+  white-space: nowrap;
+  padding: 1rem 10px;
 }
 header#intro article.fullheight #navBar a:hover:not(#brand) {
-  padding: 1rem 10px;
-  text-decoration: none;
+  color: rgba(225, 225, 225, 0.85);
   border-bottom: 2px solid #ec6713;
+}
+@media (max-width: 960px) {
+  header#intro article.fullheight #navBar a {
+    display: inline-block;
+  }
+}
+header#intro article.fullheight #navBar a.importantRule {
+  display: inline-block;
 }
 header#intro article.fullheight .none {
   padding: 2.5rem 0;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+@media (max-width: 650px) {
+  header#intro article.fullheight .none {
+    padding: 1rem 0;
+  }
 }
 header#intro article.fullheight .background {
   background: #F7F6F6;
-  -moz-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   padding: 1rem 0;
 }
 header#intro article.fullheight .background span, header#intro article.fullheight .background a#brand {
   color: #000000;
 }
 header#intro article.fullheight .subnav {
-  padding-top: 150px;
-  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: block;
+  /* -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards; */
   text-align: center;
+  margin: 0 auto;
 }
 header#intro article.fullheight .subnav p {
   display: block;
@@ -153,7 +193,7 @@ header#intro article.fullheight .subnav h3 {
 }
 
 div.page {
-  height: 300px;
+  height: 450px;
   background: #3D4849;
   padding: 2rem 0;
 }

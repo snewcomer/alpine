@@ -1,6 +1,3 @@
-# Attendance Application
-This is an application for a Lynda.com course on data-driven Angular.js Applications using FireBase.
-
 ## Instructions
 1. Make sure you have [node.js](http://nodejs.org/) and [git](http://git-scm.com/) installed on your machine.
 2. Clone this into your local machine using the terminal (mac) or Gitbash (PC) `> git clone https://github.com/planetoftheweb/attendance.git`

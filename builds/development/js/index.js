@@ -5,12 +5,16 @@ $(document).ready(function() {
   $('.fullheight').css('height', wheight);
   $('.halfheight').css('height', whalfheight);
 
+
   //collapsing navbar
   $(document).on("scroll", function() {
-    if($(document).scrollTop() > 125) {
+    if($(document).scrollTop() > 85) {
       $("#navBar").removeClass("none").addClass("background");
+
+      $('a').addClass('importantRule');
     } else {
       $("#navBar").removeClass("background").addClass("none");
+      $('a').removeClass('importantRule');
     }
   });
 

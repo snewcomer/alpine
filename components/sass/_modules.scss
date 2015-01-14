@@ -2,6 +2,9 @@
 header#intro {
   article.fullheight {
     @include backImage('../images/cheeseboard.jpg');
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
     #navBar {
       width: 100%;
       position: fixed;
@@ -11,41 +14,63 @@ header#intro {
       div.left {
         float: left;
         padding-left: 4rem;
-        margin-right: 25rem;
+        display: inline;
         a {
           font-size: 1.75em;
         }
+        @include breakpoint(max-width $small) {
+          padding-left: 10px;
+        }//breakpoint
       }//div.left
       div.right {
         float: right;
+        margin-right: 1rem;
+        display: inline;
       }
       a {
         color: rgba(255,255,255,.85);
         text-decoration: none;
-        display: inline;
+        display: block;
+        border-bottom: 0px solid transparent;
+        transition: .5s ease;
         font-weight: 100px;
+        white-space: nowrap;
+        padding: 1rem 10px;
         &:hover:not(#brand) {
-          padding: 1rem 10px;
-          text-decoration: none;
+          color: rgba(225,225,225,.85);
           border-bottom: 2px solid #ec6713;
         }
+        @include breakpoint(max-width $medium) {
+          display: inline-block;
+        }
       }//a
+      a.importantRule {
+        display: inline-block;
+      }
     }//navBar
     .none {
       padding: 2.5rem 0;
+      @include single-transition(all, .50s, ease-out);
+      @include breakpoint(max-width $small) {
+        padding: 1rem 0;
+      }//breakpoint
     }
     .background {
       background: #F7F6F6;
-      @include single-transition(all, 1s, ease-out);
+      @include single-transition(all, .50s, ease-out);
       padding: 1rem 0;
       span, a#brand {
         color: $dark;
       }
     }//background class added via jquery
     .subnav {
-      padding-top: 150px;
-      margin: 0 auto;
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(center);
+      display: block;
+      /* -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards; */
       text-align: center;
+      margin: 0 auto;
       p {
         display: block;
         color: rgba(255,255,255,.75);
@@ -66,7 +91,7 @@ header#intro {
 
 //////below header//////
 div.page {
-  height: 300px;
+  height: 450px;
   background: #3D4849;
   padding: 2rem 0;
   main.cf {
