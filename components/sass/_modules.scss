@@ -10,7 +10,6 @@ header#intro {
       float: left;
       padding-left: 4rem;
       display: inline;
-
       a {
         font-size: 1.75em;
       }//a
@@ -58,6 +57,7 @@ header#intro {
       padding: 1rem 0;
     }//breakpoint max $small
   }//.none
+
   .background {
     background: #F7F6F6;
     @include single-transition(all, .50s, ease-out);
@@ -140,7 +140,7 @@ div.page_3 {
     text-align: center;
       h2 {
       font-size: 2em;
-      }//h2 
+      }//h2
     }//main.cf
 }//div.page_3
 
