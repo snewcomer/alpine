@@ -83,6 +83,7 @@ header#intro #navBar div.left a {
 }
 @media (max-width: 960px) {
   header#intro #navBar div.left {
+    margin-right: 10em;
     padding-left: 10px;
   }
 }
