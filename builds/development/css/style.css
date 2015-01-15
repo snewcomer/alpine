@@ -81,9 +81,9 @@ header#intro #navBar div.left {
 header#intro #navBar div.left a {
   font-size: 1.75em;
 }
-@media (max-width: 650px) {
+@media (max-width: 960px) {
   header#intro #navBar div.left {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 }
 header#intro #navBar div.right {
@@ -110,11 +110,11 @@ header#intro #navBar a:hover:not(#brand) {
     display: inline-block;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 960px) {
   header#intro #navBar a {
     font-size: 1em;
     padding: .4rem 2px;
-    margin-left: 1.5em;
+    margin-left: 1.25em;
   }
 }
 header#intro #navBar a.active {
@@ -131,7 +131,7 @@ header#intro .none {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-@media (max-width: 650px) {
+@media (max-width: 960px) {
   header#intro .none {
     padding: 1rem 0;
     background: #F7F6F6;
