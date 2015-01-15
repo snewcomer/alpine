@@ -10,9 +10,9 @@ header#intro {
       a {
         font-size: 1.75em;
       }//a
-      @include breakpoint(max-width $small) {
-        padding-left: 20px;
-      }//breakpoint max small
+      @include breakpoint(max-width $medium) {
+        padding-left: 10px;
+      }//breakpoint max medium
     }//div.left
     div.right {
       float: right;
@@ -35,10 +35,10 @@ header#intro {
       @include breakpoint(max-width $medium) {
         display: inline-block;
       }//breakpoint max medium
-      @include breakpoint(max-width $small) {
+      @include breakpoint(max-width $medium) {
         font-size: 1em;
         padding: .4rem 2px;
-        margin-left: 1.5em;
+        margin-left: 1.25em;
       }//breakpoint
       &.active {
         color: rgba(225,225,225,.85);
@@ -52,7 +52,7 @@ header#intro {
   .none {
     padding: 2.5rem 0;
     @include single-transition(all, .50s, ease-out);
-    @include breakpoint(max-width $small) {
+    @include breakpoint(max-width $medium) {
       padding: 1rem 0;
       background: #F7F6F6;
       @include single-transition(all, .50s, ease-out);
@@ -60,7 +60,7 @@ header#intro {
       span, a#brand {
         color: $dark;
       }//span, a#brand
-    }//breakpoint max $small
+    }//breakpoint max $medium
   }//.none
 
   .background {
