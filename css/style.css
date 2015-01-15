@@ -73,9 +73,6 @@ header#intro #navBar {
   width: 100%;
   position: fixed;
 }
-header#intro #navBar a {
-  padding: .75rem;
-}
 header#intro #navBar div.left {
   float: left;
   padding-left: 4rem;
@@ -113,14 +110,16 @@ header#intro #navBar a:hover:not(#brand) {
     display: inline-block;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 650px) {
   header#intro #navBar a {
-    font-size: .75em;
+    font-size: 1em;
     padding: .4rem 2px;
     margin-left: 1.5em;
-    padding-top: .3em;
-    margin-top: none;
   }
+}
+header#intro #navBar a.active {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
 }
 header#intro #navBar a.importantRule {
   display: inline-block;
@@ -135,6 +134,15 @@ header#intro .none {
 @media (max-width: 650px) {
   header#intro .none {
     padding: 1rem 0;
+    background: #F7F6F6;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    padding: 1rem 0;
+  }
+  header#intro .none span, header#intro .none a#brand {
+    color: #000000;
   }
 }
 header#intro .background {
@@ -202,7 +210,7 @@ header#intro article.fullheight .subnav h3 {
 }
 
 div.page {
-  height: 450px;
+  height: 600px;
   background: #3D4849;
   color: white;
   padding: 2rem 0;

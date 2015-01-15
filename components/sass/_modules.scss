@@ -3,14 +3,10 @@ header#intro {
   #navBar {
     width: 100%;
     position: fixed;
-    a {
-      padding: .75rem;
-    }//a
     div.left {
       float: left;
       padding-left: 4rem;
       display: inline;
-
       a {
         font-size: 1.75em;
       }//a
@@ -39,13 +35,15 @@ header#intro {
       @include breakpoint(max-width $medium) {
         display: inline-block;
       }//breakpoint max medium
-      @include breakpoint(max-width $cellphone) {
-        font-size: .75em;
+      @include breakpoint(max-width $small) {
+        font-size: 1em;
         padding: .4rem 2px;
         margin-left: 1.5em;
-        padding-top: .3em;
-        margin-top: none;
-      }//breakpoint max $cellphone
+      }//breakpoint
+      &.active {
+        color: rgba(225,225,225,.85);
+        border-bottom: 2px solid #ec6713;
+      }
     }//a
     a.importantRule {
       display: inline-block;
@@ -56,16 +54,24 @@ header#intro {
     @include single-transition(all, .50s, ease-out);
     @include breakpoint(max-width $small) {
       padding: 1rem 0;
+      background: #F7F6F6;
+      @include single-transition(all, .50s, ease-out);
+      padding: 1rem 0;
+      span, a#brand {
+        color: $dark;
+      }//span, a#brand
     }//breakpoint max $small
   }//.none
+
   .background {
     background: #F7F6F6;
     @include single-transition(all, .50s, ease-out);
     padding: 1rem 0;
     span, a#brand {
       color: $dark;
-    }//@include single-transistion
+    }//span, a#brand
   }//.background class added via jquery
+
   article.fullheight {
     @include backImage('../images/cheeseboard.jpg');
     @include display-flex();
@@ -100,7 +106,7 @@ header#intro {
 
 //////below header//////
 div.page {
-  height: 450px;
+  height: 600px;
   background: #3D4849;
   color: white;
   padding: 2rem 0;
@@ -140,7 +146,7 @@ div.page_3 {
     text-align: center;
       h2 {
       font-size: 2em;
-      }//h2 
+      }//h2
     }//main.cf
 }//div.page_3
 
