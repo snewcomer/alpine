@@ -259,6 +259,10 @@ div.page_3 main.cf h2 {
   font-size: 2em;
 }
 
+article.imageSlider {
+  background: #E27A3F;
+}
+
 footer {
   padding: 14px 0;
 }
