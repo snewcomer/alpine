@@ -70,6 +70,7 @@ h2, h1, p, a {
 }
 
 header#intro #navBar {
+  z-index: 11;
   width: 100%;
   position: fixed;
 }
