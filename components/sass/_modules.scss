@@ -156,11 +156,59 @@ div.page_3 {
     }//main.cf
 }//div.page_3
 
-article.imageSlider {
+//article.imageSlider {
+//    background: $orange;
+//}
+article.imageFader {
+    height: 400px;
     background: $orange;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
 }
-
+    .rotating-item-wrapper {
+        margin-top: 3em; 
+    }
+        img.rotating-item {
+            @include display-flex();
+            @include breakpoint(max-width $medium) {
+                width: 600px;
+                margin-left: 3em;
+            }
+            @include breakpoint(max-width 830px) { 
+                width: 540px;  
+                margin-left: 4em;
+            }
+            @include breakpoint(max-width 675px) {
+                margin-left: 3.5em;
+                width: 480px;
+            }
+            @include breakpoint(max-width 585px) {
+                width: 420px;
+            }
+            @include breakpoint(max-width 515px) {
+                margin-left: 3em;
+                width: 380px;
+            }
+            @include breakpoint(max-width 470px) {
+                width: 330px;
+            }
+            @include breakpoint(max-width 430px) {
+                width: 300px;
+            }
+            @include breakpoint(max-width 400px) {
+                width: 280px;
+                margin-left: 3em;
+            }
+            @include breakpoint(max-width 360px) {
+                margin-left: 1.7em;
+            }
+            @include breakpoint(max-width 320px) {
+            margin-left: 1em;
+            }
+        }//img.rotating-item
 footer {
+  background: $light;
   padding: 14px 0;
   #socialmedia {
     text-align: center;
