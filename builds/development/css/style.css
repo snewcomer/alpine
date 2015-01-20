@@ -334,6 +334,20 @@ img.rotating-item {
   }
 }
 
+div.video {
+  background: #507356;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+div.video iframe {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 footer {
   background: #FFFFFF;
   padding: 14px 0;

@@ -207,6 +207,17 @@ article.imageFader {
             margin-left: 1em;
             }
         }//img.rotating-item
+
+    div.video {
+        background: $green;
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(center);
+        iframe {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    }
 footer {
   background: $light;
   padding: 14px 0;
