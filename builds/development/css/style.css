@@ -70,6 +70,7 @@ h2, h1, p, a {
 }
 
 header#intro #navBar {
+  z-index: 11;
   width: 100%;
   position: fixed;
 }
@@ -88,9 +89,16 @@ header#intro #navBar div.left a {
   }
 }
 header#intro #navBar div.right {
+  margin-right: 3.5em;
+  margin-top: 2em;
   float: right;
   margin-right: 1rem;
   display: inline;
+}
+@media (max-width: 960px) {
+  header#intro #navBar div.right {
+    margin-top: 0;
+  }
 }
 header#intro #navBar a {
   color: rgba(255, 255, 255, 0.85);
@@ -252,7 +260,98 @@ div.page_3 main.cf h2 {
   font-size: 2em;
 }
 
+article.imageFader {
+  height: 400px;
+  background: #E27A3F;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.rotating-item-wrapper {
+  margin-top: 3em;
+}
+
+img.rotating-item {
+  display: -webkit-flex;
+  display: flex;
+}
+@media (max-width: 960px) {
+  img.rotating-item {
+    width: 600px;
+    margin-left: 3em;
+  }
+}
+@media (max-width: 830px) {
+  img.rotating-item {
+    width: 540px;
+    margin-left: 4em;
+  }
+}
+@media (max-width: 675px) {
+  img.rotating-item {
+    margin-left: 3.5em;
+    width: 480px;
+  }
+}
+@media (max-width: 585px) {
+  img.rotating-item {
+    width: 420px;
+  }
+}
+@media (max-width: 515px) {
+  img.rotating-item {
+    margin-left: 3em;
+    width: 380px;
+  }
+}
+@media (max-width: 470px) {
+  img.rotating-item {
+    width: 330px;
+  }
+}
+@media (max-width: 430px) {
+  img.rotating-item {
+    width: 300px;
+  }
+}
+@media (max-width: 400px) {
+  img.rotating-item {
+    width: 280px;
+    margin-left: 3em;
+  }
+}
+@media (max-width: 360px) {
+  img.rotating-item {
+    margin-left: 1.7em;
+  }
+}
+@media (max-width: 320px) {
+  img.rotating-item {
+    margin-left: 1em;
+  }
+}
+
+div.video {
+  background: #507356;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+div.video iframe {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 5px solid black;
+}
+
 footer {
+  background: #FFFFFF;
   padding: 14px 0;
 }
 footer #socialmedia {
