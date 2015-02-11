@@ -5,6 +5,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
 
 $susy: (
   columns: 12,
@@ -31,8 +32,8 @@ $purple     : #6C71C4;
 $dark       : #000000;
 $light      : #FFFFFF;
 $lgreen     : #0DFFAA;
-$dblue      : rgba(82,82,158,.7);
-$dred       : rgba(255,20,17,.5);
+$dblue      : rgba(82,82,158,.75);
+$dred       : rgba(255,20,17,.75);
 $beige         : #E3C691;
 $darkGreenGold : #8D8862;
 $lightGreen    : #C0DC99;
@@ -58,7 +59,7 @@ $headersubbg        : $dark;
 //Font variables
 $fontfamily       : 'Exo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $raleway          : 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+$robo             : "Roboto Slab", sans-serif;
 
 $thin     : 100;
 $phone    : 325px;

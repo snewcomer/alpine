@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -63,6 +64,7 @@ body {
   background: #F5F5F1;
   font-family: "Inika", serif;
   font-size: 1.1em;
+  position: relative;
 }
 
 h2, h1, p, a {
@@ -70,17 +72,56 @@ h2, h1, p, a {
 }
 
 header#intro #navBar {
-  z-index: 11;
+  z-index: 10;
   width: 100%;
+  height: 119px;
   position: fixed;
+}
+header#intro #navBar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: block;
+  border-bottom: 0px solid transparent;
+  transition: .5s ease;
+  font-weight: 100px;
+  white-space: nowrap;
+  padding: 1rem 10px;
+}
+header#intro #navBar a:hover:not(#brand) {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
+}
+@media (max-width: 960px) {
+  header#intro #navBar a {
+    display: inline-block;
+    font-size: 1em;
+    padding: .4rem 2px;
+    margin-left: 1.25em;
+  }
+}
+header#intro #navBar a.active {
+  color: rgba(225, 225, 225, 0.85);
+  border-bottom: 2px solid #ec6713;
+}
+header#intro #navBar a.importantRule {
+  display: inline-block;
 }
 header#intro #navBar div.left {
   float: left;
   padding-left: 4rem;
   display: inline;
 }
+header#intro #navBar div.left span {
+  font-size: 1.1em;
+  display: block;
+}
+@media (max-width: 960px) {
+  header#intro #navBar div.left span {
+    display: none;
+  }
+}
 header#intro #navBar div.left a {
-  font-size: 1.75em;
+  font-size: 2em;
 }
 @media (max-width: 960px) {
   header#intro #navBar div.left {
@@ -100,38 +141,43 @@ header#intro #navBar div.right {
     margin-top: 0;
   }
 }
-header#intro #navBar a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  display: block;
-  border-bottom: 0px solid transparent;
-  transition: .5s ease;
-  font-weight: 100px;
-  white-space: nowrap;
-  padding: 1rem 10px;
+header#intro #navBar div.right .nav-list .nav-item {
+  display: inline;
 }
-header#intro #navBar a:hover:not(#brand) {
-  color: rgba(225, 225, 225, 0.85);
-  border-bottom: 2px solid #ec6713;
-}
-@media (max-width: 960px) {
-  header#intro #navBar a {
-    display: inline-block;
+@media (max-width: 650px) {
+  header#intro #navBar div.right .nav-list .nav-item {
+    display: none;
   }
 }
-@media (max-width: 960px) {
-  header#intro #navBar a {
-    font-size: 1em;
-    padding: .4rem 2px;
-    margin-left: 1.25em;
+header#intro #navBar div.right .nav-mobile {
+  display: none;
+  /* Hide from browsers that don't support media queries */
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #34495E url(../images/menu.svg) no-repeat center center;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+@media (max-width: 650px) {
+  header#intro #navBar div.right .nav-mobile {
+    display: block;
   }
 }
-header#intro #navBar a.active {
-  color: rgba(225, 225, 225, 0.85);
-  border-bottom: 2px solid #ec6713;
+header#intro #navBar #nav-anchors {
+  display: none;
 }
-header#intro #navBar a.importantRule {
-  display: inline-block;
+header#intro #navBar #nav-anchors li a {
+  color: #000000;
+}
+@media (max-width: 650px) {
+  header#intro #navBar #nav-anchors {
+    display: inline;
+  }
 }
 header#intro .none {
   padding: 2.5rem 0;
@@ -218,24 +264,33 @@ header#intro article.fullheight .subnav h3 {
   font-size: 2.25em;
 }
 
-div.page {
-  height: 600px;
+#aboutUs, #expertise {
+  height: auto;
   background: #3D4849;
   color: white;
   padding: 2rem 0;
 }
-div.page main.cf {
-  text-align: center;
-}
-div.page main.cf h2 {
+#aboutUs h2, #expertise h2 {
   font-size: 2em;
+  padding-bottom: 2rem;
+}
+@media (max-width: 960px) {
+  #aboutUs h2, #expertise h2 {
+    text-align: center;
+  }
+}
+#aboutUs p, #expertise p {
+  display: inline-block;
+  line-height: 130%;
+  font-size: 1.2em;
+  padding-bottom: 2rem;
 }
 
 div.page_2 {
   height: 500px;
 }
 
-article.halfheight {
+article.halfheight, article.halfheight_2 {
   background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -247,17 +302,20 @@ article.halfheight {
   transition: all 0.3s ease-out;
 }
 
-div.page_3 {
-  background: #063642;
-  height: 300px;
-  color: white;
-  padding: 2rem 0;
+article.halfheight_2 {
+  background: url("../images/factory.jpg") no-repeat center center fixed;
 }
-div.page_3 main.cf {
-  text-align: center;
+
+#expertise {
+  background-image: linear-gradient(to bottom, #063642, rgba(82, 82, 158, 0.75));
 }
-div.page_3 main.cf h2 {
-  font-size: 2em;
+#expertise h3 {
+  font-size: 1.4rem;
+}
+@media (max-width: 960px) {
+  #expertise h3 {
+    text-align: center;
+  }
 }
 
 article.imageFader {
@@ -350,6 +408,65 @@ div.video iframe {
   border: 5px solid black;
 }
 
+#jobs {
+  height: auto;
+  background-image: linear-gradient(to bottom, #df4848, rgba(255, 20, 17, 0.75));
+  padding: 4rem 0;
+}
+#jobs h2 {
+  font-size: 1.5em;
+  padding-bottom: 2rem;
+}
+#jobs .jobs {
+  float: left;
+  display: inline-block;
+}
+#jobs #name, #jobs #email {
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+#jobs #email {
+  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+}
+#jobs #comment {
+  background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+#jobs input, #jobs textarea {
+  color: #3c3c3c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+}
+#jobs textarea {
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+#jobs #button-blue:hover {
+  color: #FFFFFF;
+  background-color: #063642;
+}
+#jobs #button-blue:active {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
 footer {
   background: #FFFFFF;
   padding: 14px 0;
@@ -366,4 +483,14 @@ footer #socialmedia ul li {
 }
 footer #socialmedia ul li img {
   width: 60px;
+}
+
+.img-circle {
+  margin: 0 0 2rem 0;
+  float: left;
+  border-radius: 50%;
+}
+
+.hide {
+  display: none;
 }
