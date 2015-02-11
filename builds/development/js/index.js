@@ -2,7 +2,7 @@
 $(document).ready(function() {
   var wheight = $(window).height();
   var whalfheight = $(window).height()/2;
-  var topoffset = 95;
+  var topoffset = 119;
   $('.fullheight').css('height', wheight);
   $('.halfheight').css('height', whalfheight);
 
@@ -20,11 +20,14 @@ $(document).ready(function() {
     if($(document).scrollTop() > 100) {
       $("#navBar").removeClass("none").addClass("background");
       $('a').addClass('importantRule');
+      $('span#name').addClass("hide");
     } else {
       $("#navBar").removeClass("background").addClass("none");
       $('a').removeClass('importantRule');
+      $('span#name').removeClass("hide");
     }
   });//collapsing navbar
+
 
  ////////smooth scrolling///////////
   $('a[href*=#]:not([href=#])').click(function() {
@@ -44,12 +47,23 @@ $(document).ready(function() {
      var windowpos = $(window).scrollTop() + topoffset;
      $('div.right a').removeClass('active');
 
-     if (windowpos > $('#aboutUs').offset().top) {
+     if (windowpos + 10 > $('#aboutUs').offset().top) {
        $('div.right a').removeClass('active');
        $('a[href$="#aboutUs"]').addClass('active');
      }
+
+     if (windowpos + 10 > $('#expertise').offset().top) {
+       $('div.right a').removeClass('active');
+       $('a[href$="#expertise"]').addClass('active');
+     }
+
+     if (windowpos + 200 > $('#jobs').offset().top) {
+       $('div.right a').removeClass('active');
+       $('a[href$="#jobs"]').addClass('active');
+     }
+
    });
-        
+
 //    $(function(){
 //        var scroller = $('#scroller div.innerScrollArea');
 //        var scrollerContent = scroller.children('ul');
@@ -86,46 +100,46 @@ $(document).ready(function() {
 //        tweenToNewSpeed(controller.fullSpeed);
 //    });
     $(window).load(function() { //start after HTML, images have loaded
- 
+
     var InfiniteRotator =
     {
         init: function()
         {
             //initial fade-in time (in milliseconds)
             var initialFadeIn = 2500;
- 
+
             //interval between items (in milliseconds)
             var itemInterval = 6000;
- 
+
             //cross-fade time (in milliseconds)
             var fadeTime = 3000;
- 
+
             //count number of items
             var numberOfItems = $('.rotating-item').length;
- 
+
             //set current item
             var currentItem = 0;
- 
+
             //show first item
             $('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
- 
+
             //loop through the items
             var infiniteLoop = setInterval(function(){
                 $('.rotating-item').eq(currentItem).fadeOut(fadeTime);
- 
+
                 if(currentItem == numberOfItems -1){
                     currentItem = 0;
                 }else{
                     currentItem++;
                 }
                 $('.rotating-item').eq(currentItem).fadeIn(fadeTime);
- 
+
             }, itemInterval);
         }
     };
- 
+
     InfiniteRotator.init();
- 
+
 });
 
 });//document.ready

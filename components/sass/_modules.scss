@@ -1,31 +1,10 @@
 //////nav///////
 header#intro {
   #navBar {
-    z-index: 11;
+    z-index: 10;
     width: 100%;
+    height: 119px;
     position: fixed;
-    div.left {
-      float: left;
-      padding-left: 4rem;
-      display: inline;
-      a {
-        font-size: 1.75em;
-      }//a
-      @include breakpoint(max-width $medium) {
-        margin-right: 10em;
-        padding-left: 10px;
-      }//breakpoint max medium
-    }//div.left
-    div.right {
-      margin-right: 3.5em;
-      margin-top: 2em;
-      @include breakpoint(max-width $medium) {
-        margin-top: 0;
-      }
-      float: right;
-      margin-right: 1rem;
-      display: inline;
-    }//div.right
     a {
       color: rgba(255,255,255,.85);
       text-decoration: none;
@@ -41,12 +20,10 @@ header#intro {
       }//&:hover:not
       @include breakpoint(max-width $medium) {
         display: inline-block;
-      }//breakpoint max medium
-      @include breakpoint(max-width $medium) {
         font-size: 1em;
         padding: .4rem 2px;
         margin-left: 1.25em;
-      }//breakpoint
+      }//breakpoint max medium
       &.active {
         color: rgba(225,225,225,.85);
         border-bottom: 2px solid #ec6713;
@@ -55,6 +32,75 @@ header#intro {
     a.importantRule {
       display: inline-block;
     }//a.importantRule
+
+    div.left {
+      float: left;
+      padding-left: 4rem;
+      display: inline;
+      span {
+        font-size: 1.1em;
+        display: block;
+        @include breakpoint(max-width $medium) {
+          display: none;
+        }
+      }//span
+      a {
+        font-size: 2em;
+      }//a
+
+      @include breakpoint(max-width $medium) {
+        margin-right: 10em;
+        padding-left: 10px;
+      }//breakpoint max medium
+    }//div.left
+    div.right {
+      margin-right: 3.5em;
+      margin-top: 2em;
+      @include breakpoint(max-width $medium) {
+        margin-top: 0;
+      }
+      float: right;
+      margin-right: 1rem;
+      display: inline;
+
+      .nav-list {
+        .nav-item {
+          display: inline;
+          @include breakpoint(max-width $small) {
+            display: none;
+          }
+        }
+      }//nav-list
+      .nav-mobile {
+        display:none; /* Hide from browsers that don't support media queries */
+        cursor:pointer;
+        position:absolute;
+        top:0;
+        right:0;
+        background:#34495E url(../images/menu.svg) no-repeat center center;
+        height:40px;
+        width:40px;
+        border-radius:5px;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        @include breakpoint(max-width $small) {
+          display: block;
+        }
+      }
+    }//div.right
+
+    #nav-anchors {
+      li {
+        a {
+          color: $dark;
+        }
+      }
+      display: none;
+      @include breakpoint(max-width $small) {
+        display: inline;
+      }
+    }
+
   }//navBar
   .none {
     padding: 2.5rem 0;
@@ -108,21 +154,28 @@ header#intro {
       }//h3
     }//subnav
   }//fullheight
-}//intro
+}//header intro
 
 
 //////below header//////
-div.page {
-  height: 600px;
+#aboutUs, #expertise {
+  height: auto;
   background: #3D4849;
   color: white;
   padding: 2rem 0;
-  main.cf {
-    text-align: center;
     h2 {
       font-size: 2em;
+      padding-bottom: 2rem;
+      @include breakpoint(max-width $medium) {
+        text-align: center;
+      }
     }//h2
-  }//main.cf
+    p {
+      display: inline-block;
+      line-height: 130%;
+      font-size: 1.2em;
+      padding-bottom: 2rem;
+    }
 }//div.page
 
 
@@ -132,7 +185,7 @@ div.page_2 {
 }//div.page_2
 
 //////3rd page/////////
-article.halfheight {
+article.halfheight, article.halfheight_2 {
   background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -144,17 +197,21 @@ article.halfheight {
   transition: all 0.3s ease-out;
 }//article.halfheight
 
-div.page_3 {
-    background: $blue;
-    height: 300px;
-    color: white;
-    padding: 2rem 0;
-    main.cf {
-    text-align: center;
-      h2 {
-      font-size: 2em;
-      }//h2
-    }//main.cf
+article.halfheight_2 {
+  background: url("../images/factory.jpg") no-repeat center center fixed;
+}
+
+#expertise {
+    background-image: linear-gradient(to bottom, $blue, $dblue);
+    h3 {
+      font-size: 1.4rem;
+      @include breakpoint(max-width $medium) {
+        text-align: center;
+      }
+    }//h3
+    p {
+
+    }
 }//div.page_3
 
 //article.imageSlider {
@@ -168,7 +225,7 @@ article.imageFader {
     @include justify-content(center);
 }
     .rotating-item-wrapper {
-        margin-top: 3em; 
+        margin-top: 3em;
     }
         img.rotating-item {
             @include display-flex();
@@ -176,8 +233,8 @@ article.imageFader {
                 width: 600px;
                 margin-left: 3em;
             }
-            @include breakpoint(max-width 830px) { 
-                width: 540px;  
+            @include breakpoint(max-width 830px) {
+                width: 540px;
                 margin-left: 4em;
             }
             @include breakpoint(max-width 675px) {
@@ -220,6 +277,74 @@ article.imageFader {
             border: 5px solid black;
         }
     }
+
+
+#jobs {
+  height: auto;
+  background-image: linear-gradient(to bottom, $red, $dred);
+  padding: 4rem 0;
+  h2 {
+    font-size: 1.5em;
+    padding-bottom: 2rem;
+  }
+  .jobs {
+    float: left;
+    display: inline-block;
+  }
+  #name, #email{
+    background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+  }
+
+  #email{
+    background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+  }
+
+  #comment{
+    background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+  }
+
+  input, textarea {
+    color:#3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 3px solid rgba(0,0,0,0);
+  }
+
+  textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+  }
+
+  #button-blue {
+    &:hover {
+      color: $light;
+      background-color: $blue;
+    }
+    &:active {
+      color: $dark;
+      background-color: $light;
+    }
+  }
+}
+
 footer {
   background: $light;
   padding: 14px 0;
@@ -237,3 +362,14 @@ footer {
     }//ul
   }//#socialmedia
 }//footer
+
+
+.img-circle {
+  margin: 0 0 2rem 0;
+  float: left;
+  border-radius: 50%;
+}//icon
+
+.hide {
+  display: none;
+}

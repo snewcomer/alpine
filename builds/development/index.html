@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Alpine Cheese</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
+
 <style type="text/css">
 /*
     #scroller {
@@ -49,56 +50,93 @@
 
 <body>
 
-  <header id="intro">
-    <!-- <nav ng-include="'nav.html'" id="navBar" class="none"></nav> -->
-  <nav id="navBar" class="none">
+<header id="intro">
+
+  <nav id="navBar" class="none" role="navigation">
     <div class="left">
-      <a href="#welcome" id="brand">Alpine Cheese</a>
+      <a href="#welcome" id="brand">Alpine<span id="name">Slicing and Cheese Conversion</span></a>
     </div>
 
+  <!-- mobile -->
+
+
+  <!-- desktop -->
     <div class="right">
-      <a href="#aboutUs"><span>ABOUT</span></a>
-      <a href="#welcome"><span>WHERE TO BUY</span></a>
-      <a href="#ourCheese"><span>OUR CHEESE</span></a>
-      <a href="#contactUs"><span>CONTACT US</span></a>
-      <a href="#contactUs"><span>BLOG</span></a>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#aboutUs"><span>ABOUT</span></a></li>
+        <li class="nav-item"><a href="#expertise"><span>EXPERTISE</span></a></li>
+        <!-- <li class="nav-item"><a href="#ourCheese"><span>OUR CHEESE</span></a></li> -->
+        <li class="nav-item"><a href="#jobs"><span>JOBS</span></a></li>
+      </ul>
+
+      <ul class="nav-mobile">
+        <li class="nav-item"><a href="#aboutUs"><span>ABOUT</span></a></li>
+        <li class="nav-item"><a href="#expertise"><span>EXPERTISE</span></a></li>
+        <!-- <li class="nav-item"><a href="#ourCheese"><span>OUR CHEESE</span></a></li> -->
+        <li class="nav-item"><a href="#jobs"><span>JOBS</span></a></li>
+      </ul>
     </div>
   </nav>
 
     <article class="fullheight">
       <div class="subnav" id="welcome">
-        <p>We are on a mission</p><br />
-        <h3>to make the best cheese around</h3>
+        <h3>Make more from your cheese</h3>
       </div>
     </article>
-  </header>
 
-  <div class="page" id="aboutUs">
-    <main class="cf">
-      <h2>Who are we?</h2>
-      <p>We make Cheese. And a lot of it</p>
-    </main>
-  </div>
+</header>
+
+  <section class="page" id="aboutUs">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-2">
+        <img class="img-circle" src="images/stix.jpg" alt="Stix">
+      </div>
+        <p class="col-md-8 col-md-offset-2">The cheese industry in Wisconsin is changing, and so are the needs for cheese converting.
+          Between the Alpine owners, we have over 100 years of experience in the cheese industry, but Alpine prides itself
+          on innovation and ingenuity when working with customers to bring their products to market.  We can create retail,
+          foodservice or specialty packaging in a variety of formats and we can slice, stick, or chunk cheese in a wide range
+          of materials.  We work almost exclusively with cheesemakers and distributors and can offer a package designed to add
+          value.
+        </p>
+    </div>
+    <div class="container">
+      <h2>Mission</h2>
+      <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-2">
+        <img class="img-circle" src="images/sliced.jpg" alt="Stix">
+      </div>
+        <p class="col-md-8 col-md-offset-2">We exist to add value to the cheese industry by providing safe, consistent
+          and creative converting and packaging solutions.
+        </p>
+    </div> <!-- container -->
+  </section>
 
   <article class="halfheight">
   <div class="page_2">
-
   </div>
   </article>
 
-  <div class="page_3">
-    <main class="cf">
-      <h2>Who are we?</h2>
-      <p>We are pioneering a new mission.</p>
-    </main>
-  </div>
+  <section class="page_3" id="expertise">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="col-md-2 col-md-offset-0 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-2">
+        <img class="img-circle" src="images/slice.jpg" alt="Icon">
+      </div>
+      <blockquote>
+        <h3 class="col-md-8 col-md-offset-2 col-sm-12">Cheese Slicing and Converting - Alpine</h3>
+          <p class="col-md-8 col-md-offset-2 col-sm-12">DESCRIPTION HERE</p>
+        <h3 class="col-md-8 col-md-offset-2 col-sm-12">Packaging Solutions</h3>
+        <p class="col-md-8 col-md-offset-2 col-sm-12">DESCRIPTION HERE</p>
+      </blockquote>
+    </div>
+  </section>
 
 <!--
   <article class="imageSlider">
       <div id="scroller" style="width: 900px; height: 400px; margin: 0 auto;">
     <div class="innerScrollArea">
         <ul>
-             Define photos here 
+             Define photos here
             <li><img src="images/cheesefactory.jpg" width="300" height="300" /></li>
             <li><img src="images/cheeseboard.jpg" width="300" height="300" /></li>
             <li><img src="images/cheesefactory.jpg" width="300" height="300" /></li>
@@ -108,16 +146,58 @@
 </div>
   </article>
 -->
-<article class="imageFader">
+<!-- <article class="imageFader">
     <div id="rotating-item-wrapper"><img class="rotating-item" src="images/cheeseboard.jpg" alt="cheese board" width="700" height="347" />
  <img class="rotating-item" src="images/cheesefactory.jpg" alt="cheese factory" width="700" height="347" />
     </div>
 </article>
     <div class="video">
          <iframe width="692" height="390" autoplay
-src="http://www.youtube.com/embed/xZi1_Az-AQE?autoplay=1&loop=1&playlist=xZi1_Az-AQE">
+         src="http://www.youtube.com/embed/xZi1_Az-AQE?autoplay=1&loop=1&playlist=xZi1_Az-AQE">
           </iframe>
       </div>
+ -->
+
+<article class="halfheight_2">
+  <div class="page_2">
+  </div>
+</article>
+
+
+<section id="jobs">
+  <div class="container">
+    <div class="col-md-6">
+      <h2>Contact Us</h2>
+        <form action="input" class="form" id="form1"> <!-- http://www.emailmeform.com/v-plans.html -->
+          <p class="name">
+            <input type="text" name="name" class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
+          </p>
+
+          <p class="email">
+            <input type="text" name="email" class="validate[required,custom[email]]" placeholder="Email" id="email" />
+          </p>
+
+          <p class="job">
+            <input type="text" name="job" class="validate[required,custom[email]]" placeholder="Job Name" id="job" />
+          </p>
+
+          <p class="text">
+            <textarea type="text" name="text" class="validate[required,length[6,300]]" placeholder="Comment" id="comment"></textarea>
+          </p>
+
+          <div class="submit">
+            <input type="submit" value="SEND" id="button-blue" />
+          </div>
+        </form>
+        <br />
+      <h4>Address:</h4>
+      <h4>Phone:</h4>
+    </div>
+    <div class="jobs col-md-6">
+      <h2>Job Openings</h2>
+    </div>
+  </div> <!-- container -->
+</section>
 
   <footer>
     <article class="content">
@@ -134,14 +214,8 @@ src="http://www.youtube.com/embed/xZi1_Az-AQE?autoplay=1&loop=1&playlist=xZi1_Az
 
 </html>
 
-  <main>
-  </main>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
-<script src="js/lib/angular/angular.min.js"></script>
-<script src="js/lib/angular/angular-route.min.js"></script>
-<script src="js/lib/angular/angular-animate.min.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>
