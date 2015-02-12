@@ -3,7 +3,7 @@
 $(document).ready(function() {
   var wheight = $(window).height();
   var whalfheight = $(window).height()/2;
-  var topoffset = 95;
+  var topoffset = 119;
   $('.fullheight').css('height', wheight);
   $('.halfheight').css('height', whalfheight);
 
@@ -25,8 +25,10 @@ $(document).ready(function() {
     } else {
       $("#navBar").removeClass("background").addClass("none");
       $('a').removeClass('importantRule');
+      $('span#name').removeClass("hide");
     }
   });//collapsing navbar
+
 
  ////////smooth scrolling///////////
   $('a[href*=#]:not([href=#])').click(function() {
@@ -46,10 +48,21 @@ $(document).ready(function() {
      var windowpos = $(window).scrollTop() + topoffset;
      $('div.right a').removeClass('active');
 
-     if (windowpos > $('#aboutUs').offset().top) {
+     if (windowpos + 9 > $('#aboutUs').offset().top) {
        $('div.right a').removeClass('active');
        $('a[href$="#aboutUs"]').addClass('active');
      }
+
+     if (windowpos + 9 > $('#expertise').offset().top) {
+       $('div.right a').removeClass('active');
+       $('a[href$="#expertise"]').addClass('active');
+     }
+
+     if (windowpos + 200 > $('#jobs').offset().top) {
+       $('div.right a').removeClass('active');
+       $('a[href$="#jobs"]').addClass('active');
+     }
+
    });
 
 //    $(function(){
@@ -132,9 +145,6 @@ $(document).ready(function() {
 
 });//document.ready
 
-<<<<<<< HEAD
-=======
 },{}]},{},[1])
 
->>>>>>> LucasWork
 },{}]},{},[1])
