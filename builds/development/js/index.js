@@ -47,12 +47,12 @@ $(document).ready(function() {
      var windowpos = $(window).scrollTop() + topoffset;
      $('div.right a').removeClass('active');
 
-     if (windowpos + 10 > $('#aboutUs').offset().top) {
+     if (windowpos + 9 > $('#aboutUs').offset().top) {
        $('div.right a').removeClass('active');
        $('a[href$="#aboutUs"]').addClass('active');
      }
 
-     if (windowpos + 10 > $('#expertise').offset().top) {
+     if (windowpos + 9 > $('#expertise').offset().top) {
        $('div.right a').removeClass('active');
        $('a[href$="#expertise"]').addClass('active');
      }
