@@ -8,5 +8,6 @@ body {
 }
 
 h2, h1, p, a {
-  font-family: 'Raleway', Helvetica,"HelveticaNeue","Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+  font-family: $fontfamily;
+  line-height: 150%;
 }

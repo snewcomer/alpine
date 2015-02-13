@@ -1,7 +1,4 @@
-@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
-@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
 html, body, div, span, applet, object, iframe,
@@ -68,30 +65,24 @@ body {
 }
 
 h2, h1, p, a {
-  font-family: 'Raleway', Helvetica,"HelveticaNeue","Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+  font-family: "Open Sans", sans-serif;
+  line-height: 150%;
 }
 
 header#intro #navBar {
   z-index: 10;
   width: 100%;
-  height: 119px;
+  height: 95px;
   position: fixed;
 }
 header#intro #navBar a {
-  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   display: block;
-  border-bottom: 0px solid transparent;
   transition: .5s ease;
-  font-weight: 100px;
   white-space: nowrap;
-  padding: 1rem 10px;
+  margin: 0rem 10px;
 }
-header#intro #navBar a:hover:not(#brand) {
-  color: rgba(225, 225, 225, 0.85);
-  border-bottom: 2px solid #ec6713;
-}
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   header#intro #navBar a {
     display: inline-block;
     font-size: 1em;
@@ -99,9 +90,14 @@ header#intro #navBar a:hover:not(#brand) {
     margin-left: 1.25em;
   }
 }
+header#intro #navBar a:hover:not(#brand) {
+  border-bottom: 1px solid #000000;
+}
 header#intro #navBar a.active {
+  margin-bottom: 0;
+  padding-bottom: 0;
   color: rgba(225, 225, 225, 0.85);
-  border-bottom: 2px solid #ec6713;
+  border-bottom: 2px solid #DF4848;
 }
 header#intro #navBar a.importantRule {
   display: inline-block;
@@ -111,72 +107,95 @@ header#intro #navBar div.left {
   padding-left: 4rem;
   display: inline;
 }
-header#intro #navBar div.left span {
-  font-size: 1.1em;
-  display: block;
+header#intro #navBar div.left img {
+  width: 300px;
 }
-@media (max-width: 960px) {
-  header#intro #navBar div.left span {
-    display: none;
+@media (max-width: 650px) {
+  header#intro #navBar div.left img {
+    width: 245px;
   }
 }
-header#intro #navBar div.left a {
-  font-size: 2em;
-}
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   header#intro #navBar div.left {
     margin-right: 10em;
     padding-left: 10px;
   }
 }
 header#intro #navBar div.right {
-  margin-right: 3.5em;
-  margin-top: 2em;
+  display: inline-block;
+  margin-right: 4em;
+  margin-top: .5em;
+  text-align: right;
   float: right;
-  margin-right: 1rem;
-  display: inline;
 }
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   header#intro #navBar div.right {
     margin-top: 0;
   }
 }
-header#intro #navBar div.right .nav-list .nav-item {
+header#intro #navBar div.right ul.nav-list li.nav-item {
   display: inline;
 }
-@media (max-width: 650px) {
-  header#intro #navBar div.right .nav-list .nav-item {
+header#intro #navBar div.right ul.nav-list li.nav-item a {
+  font-size: 1.1em;
+  margin-bottom: 1rem;
+}
+@media (max-width: 1080px) {
+  header#intro #navBar div.right ul.nav-list li.nav-item a span#remove {
     display: none;
   }
 }
-header#intro #navBar div.right .nav-mobile {
-  display: none;
-  /* Hide from browsers that don't support media queries */
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #34495E url(../images/menu.svg) no-repeat center center;
-  height: 40px;
-  width: 40px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-}
-@media (max-width: 650px) {
-  header#intro #navBar div.right .nav-mobile {
-    display: block;
+@media (max-width: 980px) {
+  header#intro #navBar div.right ul.nav-list {
+    display: none;
+    height: auto;
   }
 }
-header#intro #navBar #nav-anchors {
+header#intro #navBar div.right div#mobile {
+  cursor: pointer;
   display: none;
 }
-header#intro #navBar #nav-anchors li a {
-  color: #000000;
+@media (max-width: 980px) {
+  header#intro #navBar div.right div#mobile {
+    display: block;
+    width: 100%;
+  }
+  header#intro #navBar div.right div#mobile:after {
+    content: "";
+    background: url("../images/menu.svg") no-repeat;
+    min-height: 40px;
+    display: inline-block;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+  }
 }
-@media (max-width: 650px) {
-  header#intro #navBar #nav-anchors {
-    display: inline;
+header#intro #navBar div.right .nav-list-mobile {
+  display: none;
+  position: relative;
+}
+@media (max-width: 980px) {
+  header#intro #navBar div.right .nav-list-mobile {
+    display: none;
+  }
+}
+header#intro #navBar div.right .nav-list-mobile .nav-item {
+  display: inline;
+  float: left;
+}
+@media (min-width: 400px) and (max-width: 650px) {
+  header#intro #navBar div.right .nav-list-mobile .nav-item span {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 400px) {
+  header#intro #navBar div.right .nav-list-mobile .nav-item span {
+    font-size: .625em;
+  }
+}
+@media (max-width: 980px) {
+  header#intro #navBar {
+    height: 150px;
   }
 }
 header#intro .none {
@@ -186,14 +205,16 @@ header#intro .none {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-@media (max-width: 960px) {
+header#intro .none span {
+  font-weight: 100px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 980px) {
   header#intro .none {
     padding: 1rem 0;
     background: #F7F6F6;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
+    /*       @include single-transition(all, .50s, ease-out); */
     padding: 1rem 0;
   }
   header#intro .none span, header#intro .none a#brand {
@@ -202,6 +223,7 @@ header#intro .none {
 }
 header#intro .background {
   background: #F7F6F6;
+  border-bottom: solid #E8100C;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
@@ -264,26 +286,89 @@ header#intro article.fullheight .subnav h3 {
   font-size: 2.25em;
 }
 
-#aboutUs, #expertise {
+#aboutUs {
+  position: relative;
   height: auto;
+  width: 100%;
   background: #3D4849;
-  color: white;
+  color: #FFFFFF;
   padding: 2rem 0;
 }
-#aboutUs h2, #expertise h2 {
-  font-size: 2em;
-  padding-bottom: 2rem;
+#aboutUs .about_left, #aboutUs .about_right {
+  padding: 4rem 0;
 }
-@media (max-width: 960px) {
-  #aboutUs h2, #expertise h2 {
-    text-align: center;
+#aboutUs .about_right {
+  border-right: solid #BFD3FF;
+}
+#aboutUs .about_left {
+  border-left: solid #BFD3FF;
+  border-bottom: solid #BFD3FF;
+}
+#aboutUs .about_left p, #aboutUs .about_right p {
+  display: inline-block;
+}
+@media (max-width: 650px) {
+  #aboutUs .about_left p, #aboutUs .about_right p {
+    font-size: 1em;
   }
 }
-#aboutUs p, #expertise p {
-  display: inline-block;
-  line-height: 130%;
-  font-size: 1.2em;
+#aboutUs .about_left #who_header, #aboutUs .about_right #who_header {
+  position: relative;
+}
+@media (max-width: 650px) {
+  #aboutUs .about_left #who_header, #aboutUs .about_right #who_header {
+    float: left;
+  }
+}
+#aboutUs .about_left #who_header #who, #aboutUs .about_right #who_header #who {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+}
+@media (max-width: 980px) {
+  #aboutUs .about_left #who_header #who, #aboutUs .about_right #who_header #who {
+    position: relative;
+    float: left;
+    left: 0%;
+    font-size: 2.0em;
+  }
+}
+#aboutUs .about_left #mission_header, #aboutUs .about_right #mission_header {
+  float: right;
+  position: relative;
+}
+@media (max-width: 650px) {
+  #aboutUs .about_left #mission_header, #aboutUs .about_right #mission_header {
+    float: left;
+  }
+}
+#aboutUs .about_left #mission_header #mission, #aboutUs .about_right #mission_header #mission {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+}
+@media (max-width: 980px) {
+  #aboutUs .about_left #mission_header #mission, #aboutUs .about_right #mission_header #mission {
+    position: relative;
+    float: left;
+    right: 0%;
+    font-size: 2.0em;
+  }
+}
+#aboutUs .about_left #mission_text, #aboutUs .about_right #mission_text {
+  float: left;
+}
+@media (max-width: 650px) {
+  #aboutUs .about_left #mission_text, #aboutUs .about_right #mission_text {
+    float: right;
+  }
+}
+#aboutUs h2 {
+  font-size: 3.5em;
   padding-bottom: 2rem;
+}
+#aboutUs p {
+  font-size: 1.25em;
 }
 
 div.page_2 {
@@ -306,16 +391,94 @@ article.halfheight_2 {
   background: url("../images/factory.jpg") no-repeat center center fixed;
 }
 
-#expertise {
-  background-image: linear-gradient(to bottom, #063642, rgba(82, 82, 158, 0.75));
+#services {
+  padding-top: 3rem;
+  position: relative;
+  width: 100%;
 }
-#expertise h3 {
-  font-size: 1.4rem;
+#services .container h2.header {
+  text-align: center;
+  font-size: 3em;
+  border-bottom: solid #BFD3FF;
 }
-@media (max-width: 960px) {
-  #expertise h3 {
-    text-align: center;
+@media (max-width: 650px) {
+  #services .container h2.header {
+    font-size: 2em;
   }
+}
+@media (max-width: 650px) {
+  #services .container h1#service_1, #services .container h1#service_2 {
+    text-align: left;
+  }
+}
+#services .container div#service_1 {
+  margin-top: 2rem;
+  height: auto;
+  border-bottom: solid #BFD3FF;
+}
+#services .container div#service_2 {
+  margin-top: 2rem;
+  height: auto;
+  position: relative;
+}
+#services .container div#service_2 .service {
+  position: relative;
+  margin-bottom: 1rem;
+}
+#services .container div#service_2 .service p.solutions {
+  position: relative;
+  font-size: 1.85em;
+  text-align: center;
+}
+@media (max-width: 650px) {
+  #services .container div#service_2 .service p.solutions {
+    font-size: 1.75em;
+  }
+}
+#services .container div#service_2 .service img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 400px) {
+  #services .container div#service_2 .service img {
+    display: inline-block;
+    width: 245px;
+  }
+}
+#services .container h1 {
+  text-align: center;
+  font-size: 2em;
+}
+@media (max-width: 650px) {
+  #services .container h1 {
+    font-size: 1.4em;
+  }
+}
+#services .container blockquote {
+  position: relative;
+  display: block;
+  margin: 0rem auto;
+  width: 65%;
+  padding: 1rem 0 2rem 0;
+}
+#services .container blockquote p {
+  display: block;
+  font-size: 1.2em;
+}
+@media (max-width: 650px) {
+  #services .container blockquote p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 650px) {
+  #services .container blockquote {
+    width: 90%;
+  }
+}
+#services .container img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 article.imageFader {
@@ -337,7 +500,7 @@ img.rotating-item {
   display: -webkit-flex;
   display: flex;
 }
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   img.rotating-item {
     width: 600px;
     margin-left: 3em;
@@ -410,7 +573,7 @@ div.video iframe {
 
 #jobs {
   height: auto;
-  background-image: linear-gradient(to bottom, #df4848, rgba(255, 20, 17, 0.75));
+  background: #F9F9F9;
   padding: 4rem 0;
 }
 #jobs h2 {
@@ -437,13 +600,13 @@ div.video iframe {
   background-repeat: no-repeat;
 }
 #jobs input, #jobs textarea {
-  color: #3c3c3c;
+  color: #FFFFFF;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   border-radius: 0;
   line-height: 22px;
-  background-color: #fbfbfb;
+  background-color: rgba(255, 20, 17, 0.75);
   padding: 13px 13px 13px 54px;
   margin-bottom: 10px;
   width: 100%;
@@ -487,10 +650,13 @@ footer #socialmedia ul li img {
 
 .img-circle {
   margin: 0 0 2rem 0;
-  float: left;
   border-radius: 50%;
 }
 
 .hide {
   display: none;
+}
+
+.container {
+  width: 90%;
 }

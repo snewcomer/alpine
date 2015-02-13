@@ -3,30 +3,30 @@ header#intro {
   #navBar {
     z-index: 10;
     width: 100%;
-    height: 119px;
+    height: 95px;
     position: fixed;
     a {
-      color: rgba(255,255,255,.85);
       text-decoration: none;
       display: block;
-      border-bottom: 0px solid transparent;
       transition: .5s ease;
-      font-weight: 100px;
       white-space: nowrap;
-      padding: 1rem 10px;
-      &:hover:not(#brand) {
-        color: rgba(225,225,225,.85);
-        border-bottom: 2px solid #ec6713;
-      }//&:hover:not
+      margin: 0rem 10px;
+      span {
+      }//span
       @include breakpoint(max-width $medium) {
         display: inline-block;
         font-size: 1em;
         padding: .4rem 2px;
         margin-left: 1.25em;
       }//breakpoint max medium
+      &:hover:not(#brand) {
+        border-bottom: 1px solid $dark;
+      }//&:hover:not
       &.active {
+        margin-bottom: 0;
+        padding-bottom: 0;
         color: rgba(225,225,225,.85);
-        border-bottom: 2px solid #ec6713;
+        border-bottom: 2px solid $red;
       }
     }//a
     a.importantRule {
@@ -37,78 +37,99 @@ header#intro {
       float: left;
       padding-left: 4rem;
       display: inline;
-      span {
-        font-size: 1.1em;
-        display: block;
-        @include breakpoint(max-width $medium) {
-          display: none;
+      img {
+        width: 300px;
+        @include breakpoint(max-width $small) {
+          width: 245px;
         }
-      }//span
-      a {
-        font-size: 2em;
-      }//a
+      }//img
 
       @include breakpoint(max-width $medium) {
         margin-right: 10em;
         padding-left: 10px;
       }//breakpoint max medium
     }//div.left
+
     div.right {
-      margin-right: 3.5em;
-      margin-top: 2em;
+      display: inline-block;
+      margin-right: 4em;
+      margin-top: .5em;
+      text-align: right;
+      float: right;
       @include breakpoint(max-width $medium) {
         margin-top: 0;
       }
-      float: right;
-      margin-right: 1rem;
-      display: inline;
-
-      .nav-list {
+      ul.nav-list {
+        li.nav-item {
+          display: inline;
+          a {
+            font-size: 1.1em;
+            margin-bottom: 1rem;
+            span#remove {
+              @include breakpoint(max-width $medium + 100) {
+                display: none;
+              }
+            }//span
+          }
+        }//li
+        @include breakpoint(max-width $medium) {
+          display: none;
+          height: auto;
+        }
+      }//ul
+      div#mobile {
+        cursor: pointer;
+        display: none;
+        @include breakpoint(max-width $medium) {
+          display: block;
+          width: 100%;
+          &:after {
+            content: "";
+            background: url('../images/menu.svg') no-repeat;
+            min-height: 40px;
+            display: inline-block;
+            width: 40px;
+            position: absolute;
+            right: 10px;
+          }
+        }//breakpoint
+      }//div#mobile
+      .nav-list-mobile {
+        display: none;
+        position: relative;
+        @include breakpoint(max-width $medium) {
+          display: none;
+        }
         .nav-item {
           display: inline;
-          @include breakpoint(max-width $small) {
-            display: none;
+          float: left;
+          span {
+            @include breakpoint($cellphone $small) {
+              font-size: 1.1em;
+            }
+            @include breakpoint(max-width $cellphone) {
+              font-size: .625em;
+            }
           }
-        }
-      }//nav-list
-      .nav-mobile {
-        display:none; /* Hide from browsers that don't support media queries */
-        cursor:pointer;
-        position:absolute;
-        top:0;
-        right:0;
-        background:#34495E url(../images/menu.svg) no-repeat center center;
-        height:40px;
-        width:40px;
-        border-radius:5px;
-        -webkit-border-radius:5px;
-        -moz-border-radius:5px;
-        @include breakpoint(max-width $small) {
-          display: block;
-        }
-      }
+        }//nav-item
+      }//nav-list-mobile
     }//div.right
-
-    #nav-anchors {
-      li {
-        a {
-          color: $dark;
-        }
-      }
-      display: none;
-      @include breakpoint(max-width $small) {
-        display: inline;
-      }
+    @include breakpoint(max-width $medium) {
+      height: 150px;
     }
-
   }//navBar
   .none {
     padding: 2.5rem 0;
     @include single-transition(all, .50s, ease-out);
+    span {
+      font-weight: 100px;
+      font-family: $raleway;
+      color: rgba(255,255,255,.85);
+    }
     @include breakpoint(max-width $medium) {
       padding: 1rem 0;
       background: #F7F6F6;
-      @include single-transition(all, .50s, ease-out);
+/*       @include single-transition(all, .50s, ease-out); */
       padding: 1rem 0;
       span, a#brand {
         color: $dark;
@@ -118,6 +139,7 @@ header#intro {
 
   .background {
     background: #F7F6F6;
+    border-bottom: solid #E8100C;
     @include single-transition(all, .50s, ease-out);
     padding: 1rem 0;
     span, a#brand {
@@ -158,24 +180,82 @@ header#intro {
 
 
 //////below header//////
-#aboutUs, #expertise {
+#aboutUs {
+  position: relative;
   height: auto;
+  width: 100%;
   background: #3D4849;
-  color: white;
+  color: $light;
   padding: 2rem 0;
-    h2 {
-      font-size: 2em;
-      padding-bottom: 2rem;
-      @include breakpoint(max-width $medium) {
-        text-align: center;
-      }
-    }//h2
+  .about_left, .about_right {
+    padding: 4rem 0;
+  }
+  .about_right {
+    border-right: solid #BFD3FF;
+  }//right
+  .about_left {
+    border-left: solid #BFD3FF;
+    border-bottom: solid #BFD3FF;
+  }//left
+
+  .about_left, .about_right {
     p {
       display: inline-block;
-      line-height: 130%;
-      font-size: 1.2em;
-      padding-bottom: 2rem;
+      @include breakpoint(max-width $small) {
+        font-size: 1em;
+      }
+    }//p
+    #who_header {
+      position: relative;
+      @include breakpoint(max-width $small) {
+        float: left;
+      }
+      #who {
+        position: absolute;
+        left: 15%;
+        right: 15%;
+        @include breakpoint(max-width $medium) {
+          position: relative;
+          float: left;
+          left: 0%;
+          font-size: 2.0em;
+        }
+      }//who
+    }//who_row
+    #mission_header {
+      float: right;
+      position: relative;
+      @include breakpoint(max-width $small) {
+        float: left;
+      }
+      #mission {
+        position: absolute;
+        left: 15%;
+        right: 15%;
+        @include breakpoint(max-width $medium) {
+          position: relative;
+          float: left;
+          right: 0%;
+          font-size: 2.0em;
+        }
+      }//mission
+    }//mission_row
+    #mission_text {
+      float: left;
+      @include breakpoint(max-width $small) {
+        float: right;
+      }
     }
+  }//about_left
+  h2 {
+    font-size: 3.5em;
+    padding-bottom: 2rem;
+    @include breakpoint(max-width $medium) {
+    }
+  }//h2
+  p {
+    font-size: 1.25em;
+  }
 }//div.page
 
 
@@ -201,18 +281,87 @@ article.halfheight_2 {
   background: url("../images/factory.jpg") no-repeat center center fixed;
 }
 
-#expertise {
-    background-image: linear-gradient(to bottom, $blue, $dblue);
-    h3 {
-      font-size: 1.4rem;
-      @include breakpoint(max-width $medium) {
+#services {
+  padding-top: 3rem;
+  position: relative;
+  width: 100%;
+    .container {
+      h2.header {
         text-align: center;
+        font-size: 3em;
+        border-bottom: solid #BFD3FF;
+        @include breakpoint(max-width $small) {
+          font-size: 2em;
+        }
       }
-    }//h3
-    p {
+      h1#service_1, h1#service_2 {
+        @include breakpoint(max-width $small) {
+          text-align: left;
+        }
+      }
 
+      div#service_1 {
+        margin-top: 2rem;
+        height: auto;
+        border-bottom: solid #BFD3FF;
+      }
+      div#service_2 {
+        margin-top: 2rem;
+        height: auto;
+        position: relative;
+        .service {
+          position: relative;
+          margin-bottom: 1rem;
+          p.solutions {
+            position: relative;
+            font-size: 1.85em;
+            text-align: center;
+            @include breakpoint(max-width $small) {
+              font-size: 1.75em;
+            }
+          }//p.solutions
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(max-width $cellphone) {
+              display: inline-block;
+              width: 245px;
+            }
+          }//img
+        }//.service
+      }//service 2
+
+      h1 {
+        text-align: center;
+        font-size: 2em;
+        @include breakpoint(max-width $small) {
+          font-size: 1.4em;
+        }
+      }//h1
+      blockquote {
+        position: relative;
+        display: block;
+        margin: 0rem auto;
+        width: 65%;
+        padding: 1rem 0 2rem 0;
+        p {
+          display: block;
+          font-size: 1.2em;
+          @include breakpoint(max-width $small) {
+            font-size: 1em;
+          }
+        }
+        @include breakpoint(max-width $small) {
+          width: 90%;
+        }
+      }//blockquote
+    img {
+      margin-left: auto;
+      margin-right: auto;
     }
-}//div.page_3
+  }//container
+}//services
 
 //article.imageSlider {
 //    background: $orange;
@@ -281,7 +430,7 @@ article.imageFader {
 
 #jobs {
   height: auto;
-  background-image: linear-gradient(to bottom, $red, $dred);
+  background: #F9F9F9;
   padding: 4rem 0;
   h2 {
     font-size: 1.5em;
@@ -310,13 +459,13 @@ article.imageFader {
   }
 
   input, textarea {
-    color:#3c3c3c;
+    color: $light;
     font-family: Helvetica, Arial, sans-serif;
     font-weight:500;
     font-size: 18px;
     border-radius: 0;
     line-height: 22px;
-    background-color: #fbfbfb;
+    background-color: $dred;
     padding: 13px 13px 13px 54px;
     margin-bottom: 10px;
     width: 100%;
@@ -343,7 +492,7 @@ article.imageFader {
       background-color: $light;
     }
   }
-}
+} //jobs
 
 footer {
   background: $light;
@@ -366,10 +515,13 @@ footer {
 
 .img-circle {
   margin: 0 0 2rem 0;
-  float: left;
   border-radius: 50%;
 }//icon
 
 .hide {
   display: none;
+}
+
+.container {
+  width: 90%;
 }

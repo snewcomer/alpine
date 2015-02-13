@@ -1,9 +1,6 @@
 // _variables.scss
 // =================
-@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
-@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
 
@@ -14,9 +11,9 @@ $susy: (
   gutter-position: inside
 );
 
-$cellphone: 360px;
+$cellphone: 400px;
 $small: 650px;
-$medium: 960px;
+$medium: 980px;
 $wide: 1200px;
 
 
@@ -57,7 +54,7 @@ $navBrandBg         : $red;
 $headersubbg        : $dark;
 
 //Font variables
-$fontfamily       : 'Exo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontfamily       : 'Open Sans', sans-serif;
 $raleway          : 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $robo             : "Roboto Slab", sans-serif;
 
