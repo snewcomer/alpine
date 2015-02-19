@@ -2,6 +2,9 @@
 // ========
 @mixin backImage($image) {
   background: url($image) no-repeat center center fixed;
+  position: relative;
+  display: block;
+  //fit in container
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,13 +15,12 @@
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
-
   @media (max-width: 800px) {
-    height: 150px;
+    height: 600px;
   }
 
   @media (max-width: 300px) {
-    height: 100px;
+    height: 300px;
   }
 }//backImage
 

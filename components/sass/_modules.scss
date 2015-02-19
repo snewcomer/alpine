@@ -105,7 +105,7 @@ header#intro {
           float: left;
           span {
             @include breakpoint($cellphone $small) {
-              font-size: 1.1em;
+              font-size: .8em;
             }
             @include breakpoint(max-width $cellphone) {
               font-size: .625em;
@@ -152,7 +152,9 @@ header#intro {
     @include display-flex();
     @include align-items(center);
     @include justify-content(center);
-
+    @include breakpoint(max-width $medium) {
+      //display: none;
+    }
     .subnav {
       @include display-flex();
       @include align-items(center);
@@ -173,6 +175,9 @@ header#intro {
         color: $light;
         font-weight: $thin;
         font-size: 2.25em;
+        @include breakpoint(max-width $small) {
+          font-size: 1.75em;
+        }
       }//h3
     }//subnav
   }//fullheight
@@ -186,7 +191,7 @@ header#intro {
   width: 100%;
   background: #3D4849;
   color: $light;
-  padding: 2rem 0;
+  padding: 7rem 0;
   .about_left, .about_right {
     padding: 4rem 0;
   }
@@ -260,31 +265,34 @@ header#intro {
 
 
 //////2nd page/////////
-div.page_2 {
-  height: 500px;
+div#page {
+  height: 600px;
 }//div.page_2
 
 //////3rd page/////////
-article.halfheight, article.halfheight_2 {
-  background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}//article.halfheight
+article.halfheight {
+  @include backImage('../images/cheesefactory.jpg');
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  //background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
+}
 
 article.halfheight_2 {
-  background: url("../images/factory.jpg") no-repeat center center fixed;
+  @include backImage('../images/factory.jpg');
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  @include breakpoint(max-width $small) {
+    @include backImage('../images/factor_2.jpg');
+  }
 }
 
 #services {
-  padding-top: 3rem;
+  padding: 3rem 0;
   position: relative;
   width: 100%;
+  min-height: 1200px;
     .container {
       h2.header {
         text-align: center;
@@ -294,19 +302,20 @@ article.halfheight_2 {
           font-size: 2em;
         }
       }
-      h1#service_1, h1#service_2 {
+      h1#service_title_1, h1#service_title_2 {
         @include breakpoint(max-width $small) {
           text-align: left;
         }
       }
 
       div#service_1 {
+        position: relative;
         margin-top: 2rem;
         height: auto;
         border-bottom: solid #BFD3FF;
       }
       div#service_2 {
-        margin-top: 2rem;
+        margin: 2rem 0;
         height: auto;
         position: relative;
         .service {
@@ -344,7 +353,7 @@ article.halfheight_2 {
         display: block;
         margin: 0rem auto;
         width: 65%;
-        padding: 1rem 0 2rem 0;
+        padding: 1rem 0 4rem 0;
         p {
           display: block;
           font-size: 1.2em;
@@ -362,70 +371,6 @@ article.halfheight_2 {
     }
   }//container
 }//services
-
-//article.imageSlider {
-//    background: $orange;
-//}
-article.imageFader {
-    height: 400px;
-    background: $orange;
-    @include display-flex();
-    @include align-items(center);
-    @include justify-content(center);
-}
-    .rotating-item-wrapper {
-        margin-top: 3em;
-    }
-        img.rotating-item {
-            @include display-flex();
-            @include breakpoint(max-width $medium) {
-                width: 600px;
-                margin-left: 3em;
-            }
-            @include breakpoint(max-width 830px) {
-                width: 540px;
-                margin-left: 4em;
-            }
-            @include breakpoint(max-width 675px) {
-                margin-left: 3.5em;
-                width: 480px;
-            }
-            @include breakpoint(max-width 585px) {
-                width: 420px;
-            }
-            @include breakpoint(max-width 515px) {
-                margin-left: 3em;
-                width: 380px;
-            }
-            @include breakpoint(max-width 470px) {
-                width: 330px;
-            }
-            @include breakpoint(max-width 430px) {
-                width: 300px;
-            }
-            @include breakpoint(max-width 400px) {
-                width: 280px;
-                margin-left: 3em;
-            }
-            @include breakpoint(max-width 360px) {
-                margin-left: 1.7em;
-            }
-            @include breakpoint(max-width 320px) {
-            margin-left: 1em;
-            }
-        }//img.rotating-item
-
-    div.video {
-        background: $green;
-        @include display-flex();
-        @include align-items(center);
-        @include justify-content(center);
-        iframe {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            border: 5px solid black;
-        }
-    }
 
 
 #jobs {
