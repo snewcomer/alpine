@@ -8,25 +8,26 @@ header#intro {
     a {
       text-decoration: none;
       display: block;
-      transition: .5s ease;
+      height: 2rem;
+      //transition: .5s ease;
       white-space: nowrap;
       margin: 0rem 10px;
       span {
       }//span
       @include breakpoint(max-width $medium) {
         display: inline-block;
-        font-size: 1em;
+        font-size: .8em;
         padding: .4rem 2px;
         margin-left: 1.25em;
       }//breakpoint max medium
       &:hover:not(#brand) {
-        border-bottom: 1px solid $dark;
+        border-bottom: .5px solid $dark;
       }//&:hover:not
       &.active {
         margin-bottom: 0;
         padding-bottom: 0;
         color: rgba(225,225,225,.85);
-        border-bottom: 2px solid $red;
+        border-bottom: 1.5px solid $red;
       }
     }//a
     a.importantRule {
@@ -37,12 +38,15 @@ header#intro {
       float: left;
       padding-left: 4rem;
       display: inline;
-      img {
-        width: 300px;
-        @include breakpoint(max-width $small) {
-          width: 245px;
-        }
-      }//img
+      a#brand {
+        img {
+          background: rgba(255,255,255,.35);
+          width: 300px;
+          @include breakpoint(max-width $small) {
+            width: 245px;
+          }
+        }//img
+      }//a
 
       @include breakpoint(max-width $medium) {
         margin-right: 10em;
@@ -65,12 +69,7 @@ header#intro {
           a {
             font-size: 1.1em;
             margin-bottom: 1rem;
-            span#remove {
-              @include breakpoint(max-width $medium + 100) {
-                display: none;
-              }
-            }//span
-          }
+          }//a
         }//li
         @include breakpoint(max-width $medium) {
           display: none;
@@ -84,6 +83,8 @@ header#intro {
           display: block;
           width: 100%;
           &:after {
+            position: fixed;
+            bottom: 0px;
             content: "";
             background: url('../images/menu.svg') no-repeat;
             min-height: 40px;
@@ -97,21 +98,40 @@ header#intro {
       .nav-list-mobile {
         display: none;
         position: relative;
-        @include breakpoint(max-width $medium) {
-          display: none;
-        }
+        float: left;
         .nav-item {
-          display: inline;
+          display: inline-block;
           float: left;
+          margin: 0;
+          //padding-right: .75rem;
           span {
+            margin-bottom: 1rem;
             @include breakpoint($cellphone $small) {
-              font-size: .8em;
+              font-size: .7em;
             }
             @include breakpoint(max-width $cellphone) {
-              font-size: .625em;
+              font-size: .65em;
             }
-          }
+          }//span
+          span#remove {
+            @include breakpoint($cellphone $small) {
+              font-size: .7em;
+            }
+            @include breakpoint(max-width $cellphone) {
+              display: none;
+            }
+          }//span#remove
+          span#replace {
+            display: none;
+            @include breakpoint(max-width $cellphone) {
+              display: inline-block;
+              font-size: .65em;
+            }
+          }//span#replace
         }//nav-item
+        @include breakpoint(max-width $small) {
+          padding: 1.0rem 0;
+        }
       }//nav-list-mobile
     }//div.right
     @include breakpoint(max-width $medium) {
@@ -129,7 +149,7 @@ header#intro {
     @include breakpoint(max-width $medium) {
       padding: 1rem 0;
       background: #F7F6F6;
-/*       @include single-transition(all, .50s, ease-out); */
+      @include single-transition(all, .50s, ease-out);
       padding: 1rem 0;
       span, a#brand {
         color: $dark;
@@ -143,33 +163,35 @@ header#intro {
     @include single-transition(all, .50s, ease-out);
     padding: 1rem 0;
     span, a#brand {
+      background: none;
+      padding: 0;
       color: $dark;
     }//span, a#brand
   }//.background class added via jquery
 
-  article.fullheight {
-    @include backImage('../images/cheeseboard.jpg');
+  article.fullheight, article#mobile_fullheight {
+    //creates full height screen no matter what size screen
+    @include backImage('../images/ieCover.jpg');
     @include display-flex();
     @include align-items(center);
     @include justify-content(center);
-    @include breakpoint(max-width $medium) {
-      //display: none;
-    }
+    video {
+      background-repeat: no-repeat;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -10;
+      background-size: cover;
+      transition: 1s opacity;
+      @include breakpoint(max-width $small) {
+        display: none;
+      }
+    }//video
     .subnav {
-      @include display-flex();
-      @include align-items(center);
-      @include justify-content(center);
-      display: block;
-      /* -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards; */
-      text-align: center;
-      margin: 0 auto;
-      p {
-        display: block;
-        color: rgba(255,255,255,.75);
-        font-size: 1.75em;
-        font-weight: $thin;
-        line-height: 2em;
-      }//p
       h3 {
         text-transform: uppercase;
         color: $light;
@@ -179,8 +201,41 @@ header#intro {
           font-size: 1.75em;
         }
       }//h3
+      a {
+        z-index: 10;
+        img {
+          margin: 0 auto;
+          margin-top: 4.25rem;
+          display: block;
+          background: $dark;
+          border-radius: 50%;
+          @include breakpoint(max-width $small) {
+            width: 35px;
+            height: 35px;
+          }
+        }//image
+      }//a
     }//subnav
-  }//fullheight
+
+    @include breakpoint(max-width $small) {
+      display: none;
+    }
+  }//article.fullheight
+  article#mobile_fullheight {
+    display: none;
+    @include breakpoint(max-width $small) {
+      .subnav {
+        padding-top: 8rem;
+      }
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(center);
+      @include backImage('../images/ieCover.jpg');
+    }
+  }//fullheight mobile
 }//header intro
 
 
@@ -189,9 +244,10 @@ header#intro {
   position: relative;
   height: auto;
   width: 100%;
-  background: #3D4849;
+  //#3D4849
+  background: rgba(61,72,73,.90);
   color: $light;
-  padding: 7rem 0;
+  padding: 4rem 0;
   .about_left, .about_right {
     padding: 4rem 0;
   }
@@ -270,29 +326,42 @@ div#page {
 }//div.page_2
 
 //////3rd page/////////
-article.halfheight {
-  @include backImage('../images/cheesefactory.jpg');
+article#cheddar {
   @include display-flex();
   @include align-items(center);
   @include justify-content(center);
-  //background: url("../images/cheesefactory.jpg") no-repeat center center fixed;
-}
-
-article.halfheight_2 {
-  @include backImage('../images/factory.jpg');
-  @include display-flex();
-  @include align-items(center);
-  @include justify-content(center);
+  z-index: 10;
   @include breakpoint(max-width $small) {
-    @include backImage('../images/factor_2.jpg');
+    height: 400px;
+    @include backImage('../images/cheddar-cheese.png');
+  }
+}//halfheight
+
+article#hallway {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  z-index: 100;
+  @include breakpoint(max-width $small) {
+    @include backImage('../images/factory.jpg');
   }
 }
 
-#services {
+article#machine {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  z-index: 100;
+  @include breakpoint(max-width $small) {
+    @include backImage('../images/englishHollow.jpg');
+  }
+}
+
+#services, #employment {
   padding: 3rem 0;
-  position: relative;
   width: 100%;
   min-height: 1200px;
+  background: rgba(255,255,255,.85);
     .container {
       h2.header {
         text-align: center;
@@ -320,9 +389,8 @@ article.halfheight_2 {
         position: relative;
         .service {
           position: relative;
-          margin-bottom: 1rem;
+          margin-bottom: 1.25rem;
           p.solutions {
-            position: relative;
             font-size: 1.85em;
             text-align: center;
             @include breakpoint(max-width $small) {
@@ -355,7 +423,6 @@ article.halfheight_2 {
         width: 65%;
         padding: 1rem 0 4rem 0;
         p {
-          display: block;
           font-size: 1.2em;
           @include breakpoint(max-width $small) {
             font-size: 1em;
@@ -372,14 +439,38 @@ article.halfheight_2 {
   }//container
 }//services
 
+#employment {
+  min-height: 400px;
+  p {
+    font-size: 1.2em;
+    @include breakpoint(max-width $small) {
+      font-size: 1em;
+    }
+  }
+}//employment
 
-#jobs {
+#contact {
   height: auto;
   background: #F9F9F9;
   padding: 4rem 0;
+  border-top: solid #BFD3FF;
+  border-bottom: solid #BFD3FF;
+  padding: 2rem 0;
+  position: relative;
+  clear: both;
+  text-align: center;
+  h3 {
+    font-size: 1.4em;
+  }//h3
+  p.people {
+    height: auto;
+    width: auto;
+    background: rgba(223,72,72,.4);
+    font-size: 1.3em;
+  }//p
   h2 {
     font-size: 1.5em;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
   }
   .jobs {
     float: left;
@@ -404,13 +495,11 @@ article.halfheight_2 {
   }
 
   input, textarea {
-    color: $light;
+    color: $dark;
     font-family: Helvetica, Arial, sans-serif;
     font-weight:500;
     font-size: 18px;
-    border-radius: 0;
     line-height: 22px;
-    background-color: $dred;
     padding: 13px 13px 13px 54px;
     margin-bottom: 10px;
     width: 100%;
@@ -418,6 +507,10 @@ article.halfheight_2 {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-box-shadow: 2px 2px 3px lighten($dark, 50);
+    -moz-box-shadow: 2px 2px 3px lighten($dark, 50);
+    -ms-box-shadow: 2px 2px 3px lighten($dark, 50);
+    box-shadow: 2px 2px 3px lighten($dark, 50);
     border: 3px solid rgba(0,0,0,0);
   }
 
@@ -428,15 +521,27 @@ article.halfheight_2 {
   }
 
   #button-blue {
+    background-color: $dred;
     &:hover {
       color: $light;
       background-color: $blue;
     }
     &:active {
       color: $dark;
-      background-color: $light;
+      background-color: lighten($dred, 50);
     }
+  }//button
+  #location {
+    padding-left: 2rem;
+    position: relative;
   }
+  #map-canvas {
+    padding-right: 2rem;
+    position: relative;
+    width: 700px;
+    height: 450px;
+    background-color: #CCC;
+  }//map
 } //jobs
 
 footer {
@@ -458,15 +563,57 @@ footer {
 }//footer
 
 
-.img-circle {
-  margin: 0 0 2rem 0;
-  border-radius: 50%;
-}//icon
 
-.hide {
-  display: none;
-}
-
+/////////extra//////////
 .container {
   width: 90%;
+}
+
+.spinner {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.loader {
+
+  margin: auto 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10px;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid rgb(0,0,0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

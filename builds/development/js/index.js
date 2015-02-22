@@ -3,16 +3,55 @@ $(function() {
 
   'use strict';
 
-  //$('#service_1').hide();
-  //$('#service_2').hide();
+  //map
+  function initialize() {
+    var mapCanvas = document.getElementById('map-canvas');
+    var mapOptions = {
+      scrollwheel: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      draggable: false,
+      center: new google.maps.LatLng(42.60239, -89.66040),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+  }
 
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  //onload functions
+  function loop() {
+    $('#down').animate({top: 500}, {
+      duration: 750,
+      complete: function() {
+        $('#down').animate({top: 480}, {
+          duration: 750,
+          complete: loop});
+      }});
+  }
+  loop();
+
+  //for fade in functions below
+  document.getElementById("service_1").style.display = "none";
+  document.getElementById("service_2").style.display = "none";
+
+  $('#fadeIn').css("display", "none");
+  $('#fadeIn').delay(1200).fadeIn();
+  $('.spinner').delay(900).fadeOut();
+
+  //animate, resize as page changes
   var wheight = $(window).height();
-  var whalfheight = $(window).height()/2;
+  var wheightMobile = wheight - $('#navBar').height();
+  var whalfheight = $(window).height()/2 + 100;
   var topoffset = 95;
   var fades_1 = 0;
   var fades_2 = 0;
   var fades_3 = 0;
+  var fades_4 = 0;
   $('.fullheight').css('height', wheight);
+  $('.fullheight-mobile').css('height', wheight);
   $('.halfheight').css('height', whalfheight);
 
   var isTouch = 'ontouchstart' in document.documentElement;
@@ -31,11 +70,9 @@ $(function() {
     if($(document).scrollTop() > 100) {
       $("#navBar").removeClass("none").addClass("background");
       $('a').addClass('importantRule');
-      $('span#name').addClass("hide");
     } else {
       $("#navBar").removeClass("background").addClass("none");
       $('a').removeClass('importantRule');
-      $('span#name').removeClass("hide");
     }
   });//collapsing navbar
 
@@ -63,14 +100,19 @@ $(function() {
        $('a[href$="#aboutUs"]').addClass('active');
      }
 
-     if ((windowpos + 200 > $('#services').offset().top) && (windowpos < $('#jobs').offset().top - 400)) {
+     if ((windowpos + 200 > $('#services').offset().top) && (windowpos < $('#employment').offset().top - 400)) {
        $('div.right a').removeClass('active');
        $('a[href$="#services"]').addClass('active');
      }
 
-     if (windowpos + 400 > $('#jobs').offset().top) {
+     if (windowpos + 200 > $('#employment').offset().top) {
        $('div.right a').removeClass('active');
-       $('a[href$="#jobs"]').addClass('active');
+       $('a[href$="#employment"]').addClass('active');
+     }
+
+     if (windowpos + 300 > $('#contact').offset().top) {
+       $('div.right a').removeClass('active');
+       $('a[href$="#contact"]').addClass('active');
      }
 
      //fade in services
@@ -82,7 +124,7 @@ $(function() {
        $('div#service_1').show('slide');
      }
 
-     if (windowpos - 100 > service && fades_2 == 0 && !isTouch) {
+     if (windowpos + 50 > service && fades_2 == 0 && !isTouch) {
        $('div#service_2').fadeIn('slow', function() {
          fades_2 = 1;
        });
@@ -90,14 +132,22 @@ $(function() {
        $('div#service_2').show();
      }
 
+     if (windowpos + 50 > service && fades_4 == 0 && !isTouch) {
+       $('#contact').fadeIn('slow', function() {
+         fades_4 = 1;
+       });
+     } else if (isTouch) {
+       $('#contact').show();
+     }
+
      //fade in header text
-     if (windowpos + 125 > $('.subnav-middle').offset().top && fades_3 == 0 && !isTouch) {
-       $('.subnav-middle').fadeOut('slow', function() {
+     if (windowpos + 125 > $('.subnav').offset().top && fades_3 == 0 && !isTouch) {
+       $('.subnav').fadeOut('normal', function() {
          fades_3 = 1;
        });
      }
      if (windowpos < 250 && fades_3 == 1 && !isTouch) {
-       $('.subnav-middle').fadeIn('slow', function() {
+       $('.subnav').fadeIn('slow', function() {
          fades_3 = 0;
        });
      }
