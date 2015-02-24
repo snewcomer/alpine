@@ -185,7 +185,7 @@ header#intro #navBar div.right .nav-list-mobile .nav-item span {
 }
 @media (min-width: 400px) and (max-width: 650px) {
   header#intro #navBar div.right .nav-list-mobile .nav-item span {
-    font-size: .7em;
+    font-size: .85em;
   }
 }
 @media (max-width: 400px) {
@@ -195,7 +195,7 @@ header#intro #navBar div.right .nav-list-mobile .nav-item span {
 }
 @media (min-width: 400px) and (max-width: 650px) {
   header#intro #navBar div.right .nav-list-mobile .nav-item span#remove {
-    font-size: .7em;
+    font-size: .85em;
   }
 }
 @media (max-width: 400px) {
@@ -309,31 +309,50 @@ header#intro article.fullheight video, header#intro article#mobile_fullheight vi
     display: none;
   }
 }
-header#intro article.fullheight .subnav h3, header#intro article#mobile_fullheight .subnav h3 {
+header#intro article.fullheight .subnav h3#subnav-middle, header#intro article#mobile_fullheight .subnav h3#subnav-middle {
+  display: block;
+  position: relative;
   text-transform: uppercase;
+  width: 100%;
   color: #FFFFFF;
   font-weight: 100;
   font-size: 2.25em;
 }
 @media (max-width: 650px) {
-  header#intro article.fullheight .subnav h3, header#intro article#mobile_fullheight .subnav h3 {
-    font-size: 1.75em;
+  header#intro article.fullheight .subnav h3#subnav-middle, header#intro article#mobile_fullheight .subnav h3#subnav-middle {
+    font-size: 1.25em;
   }
 }
 header#intro article.fullheight .subnav a, header#intro article#mobile_fullheight .subnav a {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: block;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 4.25rem;
   z-index: 10;
 }
 header#intro article.fullheight .subnav a img, header#intro article#mobile_fullheight .subnav a img {
-  margin: 0 auto;
-  margin-top: 4.25rem;
-  display: block;
   background: #000000;
   border-radius: 50%;
 }
 @media (max-width: 650px) {
   header#intro article.fullheight .subnav a img, header#intro article#mobile_fullheight .subnav a img {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media (max-width: 650px) {
+  header#intro article.fullheight .subnav a, header#intro article#mobile_fullheight .subnav a {
+    width: 25px;
+    height: 25px;
+    margin-top: 4rem;
   }
 }
 @media (max-width: 650px) {
@@ -355,7 +374,7 @@ header#intro article#mobile_fullheight {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
-    background: url("../images/ieCover.jpg") no-repeat center center;
+    background: url("../images/cheddar-cheese-AnneStahl-i.png") no-repeat center center;
     position: relative;
     z-index: -20;
     -webkit-background-size: cover;
@@ -483,7 +502,7 @@ article#cheddar {
 @media (max-width: 650px) {
   article#cheddar {
     height: 400px;
-    background: url("../images/cheddar-cheese.png") no-repeat center center;
+    background: url("../images/ieCover.jpg") no-repeat center center;
     position: relative;
     z-index: -20;
     -webkit-background-size: cover;
@@ -670,6 +689,10 @@ article#machine {
 #employment {
   min-height: 400px;
 }
+#employment div#skill {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
 #employment p {
   font-size: 1.2em;
 }
@@ -696,7 +719,6 @@ article#machine {
 #contact p.people {
   height: auto;
   width: auto;
-  background: rgba(223, 72, 72, 0.4);
   font-size: 1.3em;
 }
 #contact h2 {
@@ -758,15 +780,7 @@ article#machine {
   background-color: rgba(255, 255, 255, 0.75);
 }
 #contact #location {
-  padding-left: 2rem;
   position: relative;
-}
-#contact #map-canvas {
-  padding-right: 2rem;
-  position: relative;
-  width: 700px;
-  height: 450px;
-  background-color: #CCC;
 }
 
 footer {
@@ -842,4 +856,17 @@ footer #socialmedia ul li img {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+#map-canvas, iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.gm-style img {
+  max-width: none;
+}
+
+.gm-style label {
+  width: auto;
+  display: inline;
 }

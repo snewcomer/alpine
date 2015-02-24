@@ -3,35 +3,19 @@ $(function() {
 
   'use strict';
 
-  //map
-  function initialize() {
-    var mapCanvas = document.getElementById('map-canvas');
-    var mapOptions = {
-      scrollwheel: false,
-      navigationControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      draggable: false,
-      center: new google.maps.LatLng(42.60239, -89.66040),
-      zoom: 8,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-  }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
 
   //onload functions
-  function loop() {
-    $('#down').animate({top: 500}, {
-      duration: 750,
-      complete: function() {
-        $('#down').animate({top: 480}, {
-          duration: 750,
-          complete: loop});
-      }});
-  }
-  loop();
+  // function loop() {
+  //   $('#down').animate({top: 500}, {
+  //     duration: 750,
+  //     complete: function() {
+  //       $('#down').animate({top: 480}, {
+  //         duration: 750,
+  //         complete: loop});
+  //     }});
+  // }
+  // loop();
 
   //for fade in functions below
   document.getElementById("service_1").style.display = "none";
