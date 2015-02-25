@@ -49,10 +49,10 @@
 
 
   <article class="fullheight" id="vid">
-    <!--[if !IE ]-->
+    <!--[if gte IE 9]><!-->
     <video preload="auto" autoplay loop>
-      <source src="../images/alpine.mp4" autoplay type="video/mp4" />
-      <source src="../images/alpine.webm" autoplay type="video/webm" />
+      <source src="../images/AlpineVideo.webm" autoplay type="video/webm" />
+      <source src="../images/AlpineVideo.mp4" autoplay type="video/mp4" />
     </video>
     <!--<![endif]-->
 
@@ -187,7 +187,7 @@
 
       <div class="col-md-6 col-sm-12">
         <h2>Contact Us About Our Services or Employment</h2>
-          <form action="index.php" method="POST" class="form" id="form1">
+          <form action="process.php" method="POST" class="form" id="form1">
             <p class="name">
               <input type="text" maxlength="100" name="name" autofocus class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
             </p>
@@ -217,8 +217,8 @@
 
       <div class="col-md-12" id="contact">
         <h3>Feel free to contact us directly about our services.</h3>
-          <br /> <p class="people">Shirley - Sales <br /> (608) 329-5400</p>
-          <br /> <p class="people">Jim - Plant Manager <br /> (608) 325-8210</p>
+          <br /> <p class="people">Shirley - Sales</p>
+          <br /> <p class="people">Jim - Plant Manager</p>
       </div>
 
   </div> <!-- container -->
@@ -243,7 +243,7 @@ $(document).ready(function() {
       //scaleControl: false,
       //draggable: false,
       center: myLatlng,
-      zoom: 14,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(mapCanvas, mapOptions);

@@ -86,7 +86,7 @@ header#intro {
             position: fixed;
             bottom: 0px;
             content: "";
-            background: url('../images/menu.svg') no-repeat;
+            background: url('../images/menu.png') no-repeat;
             min-height: 40px;
             display: inline-block;
             width: 40px;
@@ -107,15 +107,15 @@ header#intro {
           span {
             margin-bottom: 1rem;
             @include breakpoint($cellphone $small) {
-              font-size: .85em;
+              font-size: .70em;
             }
             @include breakpoint(max-width $cellphone) {
-              font-size: .65em;
+              font-size: .55em;
             }
           }//span
           span#remove {
             @include breakpoint($cellphone $small) {
-              font-size: .85em;
+              font-size: .70em;
             }
             @include breakpoint(max-width $cellphone) {
               display: none;
@@ -238,9 +238,7 @@ header#intro {
   article#mobile_fullheight {
     display: none;
     @include breakpoint(max-width $small) {
-      .subnav {
-        padding-top: 8rem;
-      }
+      display: block;
       position: relative;
       margin: 0 auto;
       text-align: center;
@@ -248,6 +246,9 @@ header#intro {
       @include align-items(center);
       @include justify-content(center);
       @include backImage('../images/cheddar-cheese-AnneStahl-i.png');
+      .subnav {
+        padding-top: 8rem;
+      }
     }
   }//fullheight mobile
 }//header intro

@@ -22,7 +22,7 @@ var env,
   outputDir,
   sassStyle;
 
-env = process.env.NODE_ENV || 'development';
+env = process.env.NODE_ENV || 'production';
 
 if (env==='development') {
   outputDir = 'builds/development/';

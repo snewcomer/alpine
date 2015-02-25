@@ -3,20 +3,6 @@ $(function() {
 
   'use strict';
 
-
-
-  //onload functions
-  // function loop() {
-  //   $('#down').animate({top: 500}, {
-  //     duration: 750,
-  //     complete: function() {
-  //       $('#down').animate({top: 480}, {
-  //         duration: 750,
-  //         complete: loop});
-  //     }});
-  // }
-  // loop();
-
   //for fade in functions below
   document.getElementById("service_1").style.display = "none";
   document.getElementById("service_2").style.display = "none";
@@ -79,6 +65,7 @@ $(function() {
      var service = $('#services').offset().top;
      $('div.right a').removeClass('active');
 
+     //highlight links
      if ((windowpos + 200 > $('#aboutUs').offset().top) && (windowpos < $('#services').offset().top - 400)) {
        $('div.right a').removeClass('active');
        $('a[href$="#aboutUs"]').addClass('active');
@@ -125,18 +112,17 @@ $(function() {
      }
 
      //fade in header text
-     if (windowpos + 125 > $('.subnav').offset().top && fades_3 == 0 && !isTouch) {
-       $('.subnav').fadeOut('normal', function() {
-         fades_3 = 1;
-       });
-     }
-     if (windowpos < 250 && fades_3 == 1 && !isTouch) {
+     if (windowpos < 200 && !isTouch) {
        $('.subnav').fadeIn('slow', function() {
          fades_3 = 0;
        });
-     }
+     } else if (windowpos + 125 > $('.subnav').offset().top && fades_3 == 0 && !isTouch) {
+       $('.subnav').fadeOut('normal', function() {
+         fades_3 = 1;
+       });
+     }//else
 
-   });
+   });//window.on scroll
 
 
    $('#mobile').on('click', function(e) {

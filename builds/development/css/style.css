@@ -365,6 +365,7 @@ header#intro article#mobile_fullheight {
 }
 @media (max-width: 650px) {
   header#intro article#mobile_fullheight {
+    display: block;
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -386,9 +387,6 @@ header#intro article#mobile_fullheight {
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
   }
-  header#intro article#mobile_fullheight .subnav {
-    padding-top: 8rem;
-  }
 }
 @media (max-width: 650px) and (max-width: 900px) {
   header#intro article#mobile_fullheight {
@@ -398,6 +396,11 @@ header#intro article#mobile_fullheight {
 @media (max-width: 650px) and (max-width: 360px) {
   header#intro article#mobile_fullheight {
     background-size: 400px;
+  }
+}
+@media (max-width: 650px) {
+  header#intro article#mobile_fullheight .subnav {
+    padding-top: 8rem;
   }
 }
 
