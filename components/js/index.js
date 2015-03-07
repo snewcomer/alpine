@@ -6,9 +6,10 @@ $(function() {
   document.getElementById("service_1").style.display = "none";
   document.getElementById("service_2").style.display = "none";
 
-  $('#fadeIn').css("display", "none");
-  $('#fadeIn').delay(1200).fadeIn();
-  $('.spinner').delay(900).fadeOut();
+  var e = document.getElementById('spinner');
+  setTimeout(function() {
+    e.parentNode.removeChild(e);
+  }, 1200);
 
   //animate, resize as page changes
   var wheight = $(window).height();

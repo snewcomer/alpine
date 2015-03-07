@@ -6,13 +6,13 @@
   <meta charset="UTF-8">
   <title>Alpine Cheese</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-<section class="spinner">
+<section id="spinner">
   <div class="loader">Loading...</div>
 </section>
 
@@ -21,7 +21,7 @@
 <header id="intro">
   <nav id="navBar" class="none" role="navigation">
     <div class="left col-lg-4 col-md-4 col-sm-6 col-xs-10">
-      <a href="#welcome" id="brand"><span><img src="images/alpine_logo.png" alt="Alpine Logo"></span></a>
+      <a href="#welcome" id="brand"><span><img src="alpine_logo.png" alt="Alpine Logo"></span></a>
     </div>
 
 
@@ -52,22 +52,22 @@
   <article class="fullheight" id="vid">
     <!--[if gte IE 9]><!-->
     <video preload="auto" autoplay loop>
-      <source src="images/AlpineVideo.webm" autoplay type="video/webm" />
-      <source src="images/AlpineVideo.mp4" autoplay type="video/mp4" />
+      <source src="AlpineVideo.webm" autoplay type="video/webm" />
+      <source src="AlpineVideo.mp4" autoplay type="video/mp4" />
     </video>
     <!--<![endif]-->
 
 
     <div class="subnav" id="welcome">
       <h3 id="subnav-middle">Make more from your cheese</h3>
-      <a href="#aboutUs" id="down"><img src="images/downarrow_small.png" alt="Scroll Down" /></a>
+      <a href="#aboutUs" id="down"><img src="downarrow_small.png" alt="Scroll Down" /></a>
     </div>
   </article>
 
   <article class="fullheight" id="mobile_fullheight">
   <div class="subnav" id="welcome">
     <h3 id="subnav-middle">Make more from your cheese</h3>
-    <a href="#aboutUs" id="down"><img src="images/downarrow_small.png" alt="Scroll Down" /></a>
+    <a href="#aboutUs" id="down"><img src="downarrow_small.png" alt="Scroll Down" /></a>
   </div>
   </article>
 
@@ -134,16 +134,16 @@
         </blockquote>
         <div class="center-block">
           <div class="service col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-2">
-            <img class="img-circle" src="images/sliced.jpg" alt="Sliced Cheese">
+            <img class="img-circle" src="sliced.jpg" alt="Sliced Cheese">
             <p class="solutions">Slices-Shingle and/or Resealable Packages</p>
           </div>
           <div class="service col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-2">
-            <img class="img-circle" src="images/Wedge.jpg" alt="Wedge Cheese">
+            <img class="img-circle" src="Wedge.jpg" alt="Wedge Cheese">
             <p class="solutions">Chunk Wedges</p>
           </div>
 
           <div class="service col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2">
-            <img class="img-circle" src="images/stix.jpg" alt="Individually Wrapped Sticks">
+            <img class="img-circle" src="stix.jpg" alt="Individually Wrapped Sticks">
             <p class="solutions">Individually Wrapped Sticks</p>
           </div>
         </div>
@@ -190,7 +190,7 @@
         <h2>Contact Us About Our Services or Employment</h2>
           <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" class="form" id="myform">
             <p class="name">
-              <input type="text" name="name" maxlength="100" autofocus class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
+              <input type="text" name="name" maxlength="100" class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
               <?php if (isset($err_myname)) { echo $err_myname; } ?>
             </p>
             <p class="email">
@@ -199,6 +199,14 @@
             <p class="text">
               <textarea type="text" name="comment" class="validate[required,length[6,300]]" placeholder="Let us know about any general inquiries or jobs you are interested in" id="comment" ></textarea>
             </p>
+
+            <p class="hidden">
+              <div id="fooDiv">
+                <label for="foo">Leave this field blank</label>
+                <input type="text" name="foo" id="foo" placeholder="leave this field blank" />
+              </div>
+            </p>
+
             <div class="submit">
               <input type="submit" value="Send" name="action" id="button-blue" />
             </div>
@@ -232,7 +240,7 @@
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+<script src="myindex.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script>
 $(document).ready(function() {
@@ -261,6 +269,10 @@ $(document).ready(function() {
   setTimeout(function(){
     initialize();
   }, 2000);
+
+  var e = document.getElementById("fooDiv");
+  $(e).hide();
+
 });
 
 </script>

@@ -8,10 +8,33 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))):
 
   $formerrors = false;
 
+  if (isset($_POST['foo'])) {
+    $msg = "No Spamming allowed";
+    $formerrors = true;
+    exit();
+  }
+
   if ($myname === '') :
     $err_myname = '<div class="error">Sorry, your name is required</div>';
     $formerrors = true;
-  endif; // input field empty
+  endif;
+
+  $SpamErrorMessage = "No Website Url's permitted";
+
+  if(preg_match("/www\.|http:|https:/i", $myname)):
+	$formerrors = true;
+	$msg = $SpamErrorMessage;
+  endif;
+
+  if(preg_match('/www\.|http:|https:/i', $myemail)):
+	$formerrors = true;
+	$msg = $SpamErrorMessage;
+  endif;
+
+  if(preg_match('/www\.|http:|https:/i', $mycomments)):
+	$formerrors = true;
+	$msg = $SpamErrorMessage;
+  endif;
 
   $formdata = array (
     'myname' => $myname,

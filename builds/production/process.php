@@ -8,5 +8,11 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['action']))):
 
   $formerrors = false;
 
+  if (isset($_POST['foo'])) {
+    $msg = "No Spamming allowed";
+    $formerrors = true;
+    exit();
+  }
+
   if ($myname === '') :
-    $err_myname = '<div class="error">Sorry, your name is required'; $formerrors = true; endif; // input field empty $formdata = array ( 'myname' => $myname, 'myemail' => $myemail, 'mycomments' => $mycomments ); if(!($formerrors)) : $to = "snewcomer24@gmail.com"; $subject = "Alpine - From $myname"; $message = json_encode($formdata); if(mail($to, $subject, $message)): $msg = "Thank you for contacting us"; else: $msg = "Problem sending the message"; endif; endif; endif; ?>
+    $err_myname = '<div class="error">Sorry, your name is required'; $formerrors = true; endif; $SpamErrorMessage = "No Website Url's permitted"; //if(preg_match("/http/i", "$myname")) (echo "$SpamErrorMessage"; exit();) // if(preg_match('/www\.|http:|https:/'i, $myemail)) ($msg = $SpamErrorMessage; exit();) // if(preg_match('/www\.|http:|https:/'i, $mycomments)) ($msg = $SpamErrorMessage; exit();) $formdata = array ( 'myname' => $myname, 'myemail' => $myemail, 'mycomments' => $mycomments ); if(!($formerrors)) : $to = "snewcomer24@gmail.com"; $subject = "Alpine - From $myname"; $message = json_encode($formdata); if(mail($to, $subject, $message)): $msg = "Thank you for contacting us"; else: $msg = "Problem sending the message"; endif; endif; endif; ?>

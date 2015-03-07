@@ -11,7 +11,7 @@
 
 <body>
 
-<section class="spinner">
+<section id="spinner">
   <div class="loader">Loading...</div>
 </section>
 
@@ -56,10 +56,9 @@
     </video>
     <!--<![endif]-->
 
-
     <div class="subnav" id="welcome">
       <h3 id="subnav-middle">Make more from your cheese</h3>
-      <a href="#aboutUs" id="down"><img src="images/downarrow_small.png" alt="Scroll Down" /></a>
+      <a href="#aboutUs" id="down"><img src="images/downarrow_small.png" alt="Scroll Down"></a>
     </div>
   </article>
 
@@ -189,13 +188,20 @@
         <h2>Contact Us About Our Services or Employment</h2>
           <form action="process.php" method="POST" class="form" id="form1">
             <p class="name">
-              <input type="text" maxlength="100" name="name" autofocus class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
+              <input type="text" maxlength="100" name="name" class="validate[required,custom[onlyLetter],length[0,100]]" placeholder="Name" id="name" />
             </p>
             <p class="email">
               <input type="email" maxlength="50" name="email" class="validate[required,custom[email]]" placeholder="Email" id="email" />
             </p>
             <p class="text">
               <textarea type="text" name="comment" class="validate[required,length[6,300]]" placeholder="Let us know about any general inquiries or jobs you are interested in" id="comment" ></textarea>
+            </p>
+
+            <p class="hidden">
+              <div id="fooDiv">
+                <label for="foo">Leave this field blank</label>
+                <input type="text" name="foo" id="foo" />
+              </div>
             </p>
             <div class="submit">
               <input type="submit" value="Send" id="button-blue" />
@@ -258,6 +264,9 @@ $(document).ready(function() {
   setTimeout(function(){
     initialize();
   }, 2000);
+
+  var e = document.getElementById("fooDiv");
+  $(e).hide();
 });
 
 </script>
